@@ -8,33 +8,16 @@ class Program {
 			a[i] = random.nextInt(120);
 		}
 
-		/*for(int i = 0; i < 100; i++) {
-			System.out.println(ages[i]);
-		}*/
+		int b[] = new int[120];
 
-		for (int i = a.length; i > 0; i--) {
-
-			for (int j = 0; j < i - 1; j++) {
-
-				if (a[j] > a[j + 1]) {
-
-					int tmp = a [j + 1];
-					a[j + 1] = a[j];
-					a[j] = tmp;
-
-				}
-			}	
+		for (int j = 0; j < a.length; j++) {
+			b[a[j]] ++;
 		}
 
-		for (int k = 0; k < a.length - 1; k++) {
-				int sum = 0;
-			if (a[k] <= a[k + 1]) {
-				sum++;
-			} else {
-				System.out.println(a[k-1] + "=" + sum);
-				sum = 0;
+		for (int k = 0; k < b.length; k++) {
+			if (b[k] != 0) {
+				System.out.println(k + " = " + b[k]);
 			}
-			
 		}
 
 		// вывести на экран количество людей, с возрастами от 0 до 120
