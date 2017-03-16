@@ -23,7 +23,6 @@ class Program {
 				} else {
 					num = a;
 				}
-
 			}
 
 			s *= num;
