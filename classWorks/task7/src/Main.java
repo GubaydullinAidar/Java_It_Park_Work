@@ -13,14 +13,17 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Mytants mytants = new Mytants(5);
-        Humans humans = new Humans(7);
+        Mytants magnito = new Mytants(5, "Magnito");
+        Mytants halk = new Mytants(3,"Halk");
+        Mytants rosomaha = new Mytants(4, "Rosomaha");
+        Humans batman = new Humans(7, "Batman");
+        Humans robin = new Humans(2, "Robin");
 
-        SuperHero heroes[] = {mytants, humans};
+        SuperHero heroes[] = {magnito, halk, rosomaha, robin, batman};
         sortHeroes(heroes);
 
         for (int i = 0; i < heroes.length; i++) {
-            System.out.print(heroes[i] + " ");
+            System.out.print(heroes[i].getName() + " ");
         }
     }
 }
