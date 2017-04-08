@@ -19,4 +19,12 @@ public class Rectangle implements Figure {
     public double perimetr() {
         return ((a * b) * 2);
     }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "a=" + a +
+                ", b=" + b +
+                '}';
+    }
 }

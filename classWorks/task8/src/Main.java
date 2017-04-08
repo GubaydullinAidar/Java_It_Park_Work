@@ -33,7 +33,9 @@ public class Main {
         }
 
         for (int k = 0; k < arrfigurs.length; k++) {
-            System.out.print(arrfigurs[k] + " ");
+            if (arrfigurs[k] != null) {
+                System.out.println(arrfigurs[k].toString() + " ");
+            }
         }
      }
 }

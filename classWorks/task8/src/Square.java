@@ -18,4 +18,11 @@ public class Square implements Figure {
     public double perimetr() {
         return (4 * a);
     }
+
+    @Override
+    public String toString() {
+        return "Square{" +
+                "a=" + a +
+                '}';
+    }
 }

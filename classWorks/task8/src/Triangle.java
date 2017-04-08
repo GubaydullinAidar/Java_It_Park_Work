@@ -21,4 +21,14 @@ public class Triangle implements Figure {
     public double perimetr() {
         return (a + b + c);
     }
+
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "a=" + a +
+                ", b=" + b +
+                ", c=" + c +
+                ", h=" + h +
+                '}';
+    }
 }
