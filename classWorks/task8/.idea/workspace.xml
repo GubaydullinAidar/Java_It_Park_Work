@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd108496-07e2-481a-9ee2-8b6652571237" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../task10/src/FigureToFile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../task10/src/Rectangle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../task10/src/Square.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../task10/src/Triangle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../task10/output.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../task10/src/FigureToFile.java" afterPath="$PROJECT_DIR$/../task10/src/FigureToFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../task10/src/Main.java" afterPath="$PROJECT_DIR$/../task10/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="task8.iws" />

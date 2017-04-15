@@ -8,12 +8,14 @@ import java.io.OutputStream;
  */
 public class FigureToFile {
 
-    public void main (Object object) {
+    public static void figureFile (Object object[]) {
         try {
             OutputStream outputStream = new FileOutputStream("output.txt");
-            String figureStr = object.toString();
-            byte figureBytes[] = figureStr.getBytes();
-            outputStream.write(figureBytes);
+            for (int i = 0; i < object.length; i++) {
+                String figureStr = object.toString();
+                byte figureBytes[] = figureStr.getBytes();
+                outputStream.write(figureBytes);
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
