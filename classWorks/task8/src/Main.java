@@ -1,8 +1,10 @@
-import java.util.Objects;
-
 public class Main {
 
+
+
     public static void main(String[] args) {
+
+        System.out.println("Hello");
         
         Square square1 = new Square(4);
         Square square2 = new Square(5);
