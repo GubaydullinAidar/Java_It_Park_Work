@@ -8,13 +8,18 @@ public class Main {
         Transport moto2 = new Motorcycle();
         Transport bike = new Bike();
 
-        Transport transports[] = {car1, car2, moto1, moto2, bike};
         ParkingPlace parking = new ParkingPlace();
-        parking.setTransports(transports);
+
+        parking.park(car1);
+        parking.park(car2);
+        parking.park(moto1);
+        parking.park(moto2);
+        parking.park(bike);
+        parking.unpark(car1);
 
 
         for (int i = 0; i < parking.transports.length; i++) {
-            if (parking.transports[i].getNumber() != null) {
+            if (parking.transports[i] != null) {
                 System.out.println(parking.transports[i].toString());
             }
         }

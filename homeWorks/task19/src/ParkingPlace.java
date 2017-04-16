@@ -1,10 +1,6 @@
 public class ParkingPlace {
 
-    public Transport transports[];
-
-    public void setTransports(Transport[] transports) {
-        this.transports = transports;
-    }
+    public Transport transports[] = new Transport[20];
 
     public void park(Transport transport) {
         for (int i = 0; i < transports.length; i++) {
@@ -16,6 +12,7 @@ public class ParkingPlace {
                     break;
                 } else
                     System.out.println("Извините, парковка без номера запрещена.");
+                    break;
             }
             if (i == transports.length - 1) {
                 System.out.println("Извините, все места заняты!");
@@ -29,6 +26,7 @@ public class ParkingPlace {
                 for (int j = i; j < transports.length - 1; j++) {
                     transports[j] = transports[j + 1];
                 }
+                break;
             }
         }
 

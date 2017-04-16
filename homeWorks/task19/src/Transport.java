@@ -22,7 +22,7 @@ public abstract class Transport implements ParkingObject {
 
     @Override
     public void goFromParking() {
-        System.out.println(this.number + " спасибо, выезжаю.");
+        System.out.println(this.number + ", спасибо, выезжаю.");
     }
 
     @Override
