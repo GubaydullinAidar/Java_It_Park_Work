@@ -26,12 +26,12 @@ public class ParkingPlace {
                 for (int j = i; j < transports.length - 1; j++) {
                     transports[j] = transports[j + 1];
                 }
+                System.out.println("Счастливого пути");
+                transport.goFromParking();
                 break;
             }
         }
 
         transports[transports.length - 1] = null;
     }
-
-
 }

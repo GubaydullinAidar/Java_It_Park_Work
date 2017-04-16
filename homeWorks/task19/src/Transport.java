@@ -16,13 +16,28 @@ public abstract class Transport implements ParkingObject {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Transport transport = (Transport) o;
+
+        return number.equals(transport.number);
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
+    @Override
     public void goToParking() {
-        System.out.println("Спасибо, заезжаю парковаться.");
+        System.out.println("Спасибо, заезжаю.");
     }
 
     @Override
     public void goFromParking() {
-        System.out.println(this.number + ", спасибо, выезжаю.");
+        System.out.println("Спасибо, выезжаю.");
     }
 
     @Override
