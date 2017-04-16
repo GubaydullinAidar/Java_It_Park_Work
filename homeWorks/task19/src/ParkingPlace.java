@@ -1,29 +1,38 @@
 public class ParkingPlace {
 
-    static String park[] = new String[10];
+    public Transport transports[];
 
-    public static void addToPark (String number) {
-        for (int i = 0; i < park.length; i++) {
-            if (park[i] == null) {
-                park[i] = number;
-                break;
+    public void setTransports(Transport[] transports) {
+        this.transports = transports;
+    }
+
+    public void park(Transport transport) {
+        for (int i = 0; i < transports.length; i++) {
+            if (transports[i] == null) {
+                if (transport.getNumber() != null) {
+                    System.out.println("Здравствуйте, припаркуйтесь на место " + (i + 1));
+                    transports[i] = transport;
+                    transport.goToParking();
+                    break;
+                } else
+                    System.out.println("Извините, парковка без номера запрещена.");
             }
-            if (i == park.length - 1) {
-                System.out.println("Все места заняты!");
+            if (i == transports.length - 1) {
+                System.out.println("Извините, все места заняты!");
             }
         }
     }
 
-    public static void delAtPark (String number) {
-        for (int i = 0; i < park.length; i++) {
-            if (number == park[i]) {
-                for (int j = i; j < park.length - 1; j++) {
-                    park[j] = park[j + 1];
+    public void unpark (Transport transport) {
+        for (int i = 0; i < transports.length; i++) {
+            if (transports[i].getNumber() == transport.getNumber()) {
+                for (int j = i; j < transports.length - 1; j++) {
+                    transports[j] = transports[j + 1];
                 }
             }
         }
 
-        park[park.length - 1] = null;
+        transports[transports.length - 1] = null;
     }
 
 
