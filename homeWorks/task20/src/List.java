@@ -1,26 +1,26 @@
-public interface List {
+public interface List<T> {
 
     /**
      * Добавление элемента в начало списка
      * @param element
      * @return true - если места хватило и добавление прошло успешно
      */
-    boolean add(int element);
+    boolean addFirst(T element);
 
-    boolean addToEnd(int element);
+    boolean addLast(T element);
 
-    boolean insert(int element, int index);
+    boolean insert(T element, int index);
 
     boolean removeByIndex(int index);
 
-    int get(int index);
+    Object get(int index);
 
     /**
      * Находит элемент по значению
      * @param element элемент, который необходимо найти
      * @return номер элемента
      */
-    int find(int element);
+    int find(T element);
 
     void reverse();
 
