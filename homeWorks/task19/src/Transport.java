@@ -1,6 +1,3 @@
-/**
- * Created by Администратор on 14.04.17.
- */
 public abstract class Transport implements ParkingObject {
 
     private String number;
@@ -19,20 +16,34 @@ public abstract class Transport implements ParkingObject {
     }
 
     @Override
-    public void parking() {
-        if (getNumber() != null) {
-            System.out.println(this.number + " пожалуйста, припаркуйтесь.");
-            ParkingPlace.addToPark(this.number);
-        } else {
-            System.out.println("Извините, без номера парковаться нельзя.");
-        }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Transport transport = (Transport) o;
+
+        return number.equals(transport.number);
     }
 
     @Override
-    public void unParking() {
+    public int hashCode() {
+        return 0;
+    }
 
-        ParkingPlace.delAtPark(this.number);
+    @Override
+    public void goToParking() {
+        System.out.println("Спасибо, заезжаю.");
+    }
 
-        System.out.println(this.number + " спасибо, за парковку, счастливого пути.");
+    @Override
+    public void goFromParking() {
+        System.out.println("Спасибо, выезжаю.");
+    }
+
+    @Override
+    public String toString() {
+        return "Transport{" +
+                "number='" + number + '\'' +
+                '}';
     }
 }
