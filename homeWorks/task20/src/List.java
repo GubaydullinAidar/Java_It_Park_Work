@@ -13,7 +13,7 @@ public interface List<T> {
 
     boolean removeByIndex(int index);
 
-    Object get(int index);
+    T get(int index);
 
     /**
      * Находит элемент по значению

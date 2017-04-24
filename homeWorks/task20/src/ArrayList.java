@@ -11,17 +11,17 @@ public class ArrayList<T> implements List<T> {
     @Override
     public boolean addFirst(T element) {
         checkRange();
-        for (int i = count - 1; i >= 0; i--) {
-            elements[i + 1] = elements[i];
+        for (int i = count; i > 0; i--) {
+            elements[i] = elements[i - 1];
         }
-        elements[0] = element;
+        this.elements[0] = element;
         count++;
         return true;
     }
 
     public boolean addLast(T element) {
         checkRange();
-        elements[count] = element;
+        this.elements[count] = element;
         count++;
         return true;
     }
@@ -29,39 +29,38 @@ public class ArrayList<T> implements List<T> {
     @Override
     public boolean insert(T element, int index) {
         checkRange();
-        for (int i = count - 1; i >= index; i--) {
-            elements[i + 1] = elements[i];
+        for (int i = count; i > index; i--) {
+            elements[i] = elements[i - 1];
         }
-        elements[index] = element;
+        this.elements[index] = element;
         count++;
         return true;
     }
 
     @Override
     public boolean removeByIndex(int index) {
-        for (int i = index; i < count - 1; i++) {
+        checkRange();
+        for (int i = index; i < count; i++) {
             elements[i] = elements[i + 1];
         }
-        elements[count - 1] = 0;
+        this.elements[count - 1] = null;
         count--;
         return true;
     }
 
     @Override
-    public Object get(int index) {
-        return elements[index];
+    public T get(int index) {
+        return (T) this.elements[index];
     }
 
     @Override
     public int find(T element) {
-        int result = 0;
         for (int i = 0; i < count; i++) {
             if (elements[i] == element) {
-                result = i + 1;
-                break;
+                return i;
             }
         }
-        return result;
+        return 0;
     }
 
     @Override
