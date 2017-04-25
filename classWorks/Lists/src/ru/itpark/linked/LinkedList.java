@@ -97,4 +97,35 @@ public class LinkedList<E> implements Iterable<E> {
     public int getCount() {
         return count;
     }
+
+    public void remove(int index) {
+
+        Node<E> current = head;
+
+        for (int i = 0; i < index - 1; i++) {
+            current = current.next;
+        }
+        if (current == head) {
+          head = current.next;
+          current.next = null;
+        } else if (current.next.next == null) {
+            current.next = null;
+            tail = current;
+        } else {
+            current = current.next.next;
+        }
+    }
+
+    public void reverse(){
+        
+        Node<E> current = head;
+        Node<E> currentPrev = null;
+
+        while (current != null) {
+            Node<E> next = current.next;
+            current.next = currentPrev;
+            currentPrev = current;
+            current = next;
+        }
+    }
 }

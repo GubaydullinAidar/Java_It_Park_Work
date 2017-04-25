@@ -45,15 +45,15 @@ public class Main {
 //        Human someHumanFromList = (Human)humansObjectsList.get(3);
 
         ArrayList<Human> humanArrayList = new ArrayList<>();
-        humanArrayList.add(marsel);
-        humanArrayList.add(regina);
-        humanArrayList.add(alina);
-        // humanArrayList.add(a);
+        humanArrayList.addLast(marsel);
+        humanArrayList.addLast(regina);
+        humanArrayList.addLast(alina);
+        // humanArrayList.addLast(a);
 
         ArrayList<Rectangle> rectangleArrayList = new ArrayList<>();
-        rectangleArrayList.add(a);
-        rectangleArrayList.add(b);
-        // rectangleArrayList.add(regina);
+        rectangleArrayList.addLast(a);
+        rectangleArrayList.addLast(b);
+        // rectangleArrayList.addLast(regina);
 
         Human marselFromList = humanArrayList.get(0);
 

@@ -1,4 +1,4 @@
-package ru.itpark.array;
+package ru.itpark.dao;
 
 import java.util.Iterator;
 
@@ -23,7 +23,7 @@ public class ArrayList<T> implements Iterable<T> {
 
         @Override
         public T next() {
-            T value = (T)elements[currentIndex];
+            T value = (T) elements[currentIndex];
             currentIndex++;
             return value;
         }

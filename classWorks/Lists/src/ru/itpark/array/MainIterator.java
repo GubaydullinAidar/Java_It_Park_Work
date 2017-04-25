@@ -1,12 +1,8 @@
 package ru.itpark.array;
 
-import ru.itpark.linked.LinkedList;
-
 import java.util.Iterator;
+import java.util.List;
 
-/**
- * Created by Student21 on 22.04.2017.
- */
 public class MainIterator {
     public static void main(String[] args) {
         Human marsel = new Human("Marsel", 23);

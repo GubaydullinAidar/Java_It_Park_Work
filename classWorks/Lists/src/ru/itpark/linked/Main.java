@@ -4,9 +4,6 @@ import ru.itpark.array.Human;
 
 import java.util.Iterator;
 
-/**
- * Created by Student21 on 22.04.2017.
- */
 public class Main {
     public static void main(String[] args) {
         Human marsel = new Human("Marsel", 23);
