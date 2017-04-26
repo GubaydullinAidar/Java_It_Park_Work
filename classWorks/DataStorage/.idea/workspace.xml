@@ -1,38 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="633788bf-d8e6-4638-a616-c71ff01534d6" name="Default" comment="add">
+    <list default="true" id="633788bf-d8e6-4638-a616-c71ff01534d6" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DataStorage/ru/itpark/LinkedList$LinkedListIterator.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DataStorage/ru/itpark/LinkedList$Node.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DataStorage/ru/itpark/LinkedList.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DataStorage/ru/itpark/Main2.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DataStorage/ru/itpark/generator/IdGeneratorInFileImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/id.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/id2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/application.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/itpark/LinkedList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/itpark/Main2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/itpark/generator/IdGeneratorInFileImpl.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/description.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/project-template.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DataStorage/ru/itpark/Main.class" afterPath="$PROJECT_DIR$/out/production/DataStorage/ru/itpark/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DataStorage/ru/itpark/dao/BaseCrudDao.class" afterPath="$PROJECT_DIR$/out/production/DataStorage/ru/itpark/dao/BaseCrudDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DataStorage/ru/itpark/dao/HumansDaoIoImpl.class" afterPath="$PROJECT_DIR$/out/production/DataStorage/ru/itpark/dao/HumansDaoIoImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DataStorage/ru/itpark/generator/IdGeneratorInMemoryImpl.class" afterPath="$PROJECT_DIR$/out/production/DataStorage/ru/itpark/generator/IdGeneratorInMemoryImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataStorage.iml" afterPath="$PROJECT_DIR$/DataStorage.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/humans.txt" afterPath="$PROJECT_DIR$/humans.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/itpark/Main.java" afterPath="$PROJECT_DIR$/src/ru/itpark/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/itpark/dao/BaseCrudDao.java" afterPath="$PROJECT_DIR$/src/ru/itpark/dao/BaseCrudDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/itpark/dao/HumansDaoIoImpl.java" afterPath="$PROJECT_DIR$/src/ru/itpark/dao/HumansDaoIoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/itpark/generator/IdGeneratorInMemoryImpl.java" afterPath="$PROJECT_DIR$/src/ru/itpark/generator/IdGeneratorInMemoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Lists/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Lists/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -463,11 +442,18 @@
       <option name="presentableId" value="Default" />
       <updated>1493202450163</updated>
     </task>
+    <task id="LOCAL-00001" summary="add">
+      <created>1493210936725</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1493210936725</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
