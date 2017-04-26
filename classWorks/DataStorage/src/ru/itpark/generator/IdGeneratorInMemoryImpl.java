@@ -21,19 +21,20 @@ public class IdGeneratorInMemoryImpl implements IdGenerator {
 
     public int findLastId(String filename) {
 
+        String[] currentHumanAsStringArray = new String[10];
         try {
         BufferedReader reader =
-            new BufferedReader(new FileReader(fileName));
+            new BufferedReader(new FileReader(filename));
         String currentHumanAsString = reader.readLine();
             while (currentHumanAsString != null) {
-                String currentHumanAsStringArray[]
-                        = currentHumanAsString.split(" ");
+                currentHumanAsStringArray = currentHumanAsString.split(" ");
+                currentHumanAsString = reader.readLine();
             }
-            return Integer.parseInt(currentHumanAsStringArray[0]);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
                 e.printStackTrace();
             }
+        return Integer.parseInt(currentHumanAsStringArray[0]);
     }
 }

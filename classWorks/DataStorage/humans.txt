@@ -4,6 +4,9 @@
 4 Ilyas 20
 5 Ruslan 25
 6 Lilya 23
-0 Ilmir 27
-1 Rustam 33
-2 Andrey 24
+7 Ilmir 27
+8 Rustam 33
+9 Andrey 24
+10 Ilmir 27
+11 Rustam 33
+12 Andrey 24

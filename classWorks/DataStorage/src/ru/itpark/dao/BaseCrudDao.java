@@ -1,5 +1,7 @@
 package ru.itpark.dao;
 
+import ru.itpark.LinkedList;
+
 /**
  * CRUD - Create Read Update Delete
  * @param <T>
@@ -30,4 +32,10 @@ public interface BaseCrudDao<T> {
      * @param id идентификатор модели
      */
     void delete(int id);
+
+    /**
+     * Достает ВСЕ данные из хранилища
+     * @return список людей
+     */
+    LinkedList<T> findAll();
 }
