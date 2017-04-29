@@ -1,11 +1,11 @@
 public class Main {
 
-    public static String arrCharToStr (char arrChar[]) {
+    public static int arrCharToStr (char arrChar[]) {
         String result = "";
         for (int i = 0; i < arrChar.length; i++) {
             result += arrChar[i];
         }
-        return result;
+        return Integer.parseInt(result);
     }
 
     public static void main(String[] args) {
