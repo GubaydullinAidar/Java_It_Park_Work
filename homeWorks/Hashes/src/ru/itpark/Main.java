@@ -20,6 +20,8 @@ public class Main {
         map.put("FB", 100);
 
         map.put("Nastaya", 26);
-        int i = 0;
+        //int i = 0;
+
+        System.out.println(map.get("FB"));
     }
 }

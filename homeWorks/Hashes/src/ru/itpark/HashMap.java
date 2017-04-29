@@ -58,6 +58,7 @@ public class HashMap<K, V> {
             if (current.getEntry().getKey().equals(key)) {
                 getValue = current.getEntry().getValue();
             }
+            current = current.getNext();
         }
         
         return getValue;
