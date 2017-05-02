@@ -13,14 +13,20 @@ public class Main2 {
         HumansDao humansDao =
                 new HumansDaoIoImpl("humans.txt", idGenerator);
 
-        Human human = humansDao.find(10);
+        Human human = humansDao.find(15);
+        System.out.println(human);
 
-        Human ilmir = new Human("Ilmir", 27);
+        /*Human ilmir = new Human("Ilmir", 27);
         Human rustam = new Human("Rustam", 33);
         Human andrey = new Human("Andrey", 24);
 
         System.out.println(humansDao.save(ilmir));
         System.out.println(humansDao.save(rustam));
-        System.out.println(humansDao.save(andrey));
+        System.out.println(humansDao.save(andrey));*/
+
+
+        for (Human humans: humansDao.findAll()) {
+            System.out.println(humans);
+        }
     }
 }

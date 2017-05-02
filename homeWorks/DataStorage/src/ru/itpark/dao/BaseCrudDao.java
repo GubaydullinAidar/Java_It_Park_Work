@@ -1,5 +1,7 @@
 package ru.itpark.dao;
 
+import ru.itpark.LinkedList;
+
 /**
  * CRUD - Create Read Update Delete
  * @param <T>
@@ -35,5 +37,5 @@ public interface BaseCrudDao<T> {
      * Достает ВСЕ данные из хранилища
      * @return список людей
      */
-    ArrayList<T> findAll();
+    LinkedList<T> findAll();
 }

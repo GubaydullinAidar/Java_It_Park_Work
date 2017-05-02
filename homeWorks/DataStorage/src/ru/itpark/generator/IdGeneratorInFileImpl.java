@@ -26,8 +26,7 @@ public class IdGeneratorInFileImpl implements IdGenerator {
             BufferedReader reader =
                     new BufferedReader(
                             new FileReader(fileName));
-            String lastGeneratedIdFromFile = reader.readLine();
-            lastGeneratedId = Integer.parseInt(lastGeneratedIdFromFile);
+            lastGeneratedId = Integer.parseInt(reader.readLine());
             reader.close();
         } catch (FileNotFoundException e) {
             throw new IllegalArgumentException(e);

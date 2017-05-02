@@ -10,9 +10,3 @@
 10 Ilmir 27
 11 Rustam 33
 12 Andrey 24
-13 Ilmir 27
-14 Rustam 33
-15 Andrey 24
-16 Ilmir 27
-17 Rustam 33
-18 Andrey 24

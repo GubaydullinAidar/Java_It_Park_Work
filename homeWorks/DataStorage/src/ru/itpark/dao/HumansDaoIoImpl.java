@@ -1,5 +1,6 @@
 package ru.itpark.dao;
 
+import ru.itpark.LinkedList;
 import ru.itpark.generator.IdGenerator;
 import ru.itpark.models.Human;
 
@@ -33,7 +34,7 @@ public class HumansDaoIoImpl implements HumansDao {
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
-        return newId;
+        return 0;
     }
 
     @Override
@@ -84,7 +85,32 @@ public class HumansDaoIoImpl implements HumansDao {
     }
 
     @Override
-    public ArrayList<Human> findAll() {
-        return null;
+    public LinkedList<Human> findAll() {
+        LinkedList<Human> allNodes = new LinkedList<>();
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+
+            String currentHumanAsString = reader.readLine();
+
+            while (currentHumanAsString != null) {
+                String currentHumanAsStringArray[] = currentHumanAsString.split(" ");
+
+                int humanId = Integer.parseInt(currentHumanAsStringArray[0]);
+                String humanName = currentHumanAsStringArray[1];
+                int humanAge = Integer.parseInt(currentHumanAsStringArray[2]);
+
+                Human human = new Human(humanId, humanName, humanAge);
+
+                allNodes.addLast(human);
+
+                currentHumanAsString = reader.readLine();
+            }
+        } catch (FileNotFoundException e) {
+            throw new IllegalArgumentException();
+        } catch (IOException e) {
+            throw new IllegalStateException();
+        }
+        return allNodes;
     }
 }
