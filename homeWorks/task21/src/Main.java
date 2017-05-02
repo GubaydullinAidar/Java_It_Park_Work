@@ -1,9 +1,11 @@
 public class Main {
 
-    public static String arrCharToStr (char arrChar[]) {
-        String result = "";
-        for (int i = 0; i < arrChar.length; i++) {
-            result += arrChar[i];
+    public static int arrCharToStr (char arrChar[]) {
+        int result = 0;
+        int b = 1;
+        for (int i = arrChar.length - 1; i >= 0; i--) {
+            result = result + ((int)arrChar[i] - (int)'0') * b;
+            b *= 10;
         }
         return result;
     }
