@@ -17,7 +17,6 @@ public class UsersDaoJdbcImpl implements UsersDao {
         this.connection = connection;
     }
 
-    @Override
     public int save(User model) {
         try {
             PreparedStatement statement = connection.prepareStatement(SQL_INSERT_USER, Statement.RETURN_GENERATED_KEYS);
@@ -37,22 +36,18 @@ public class UsersDaoJdbcImpl implements UsersDao {
         }
     }
 
-    @Override
     public User find(int id) {
         return null;
     }
 
-    @Override
     public void update(User model) {
 
     }
 
-    @Override
     public void delete(int id) {
 
     }
 
-    @Override
     public LinkedList<User> findAll() {
         return null;
     }
