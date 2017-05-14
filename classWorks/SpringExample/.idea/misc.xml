@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_3" default="false" />
-=======
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
@@ -12,5 +9,4 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
->>>>>>> 17fbc808996140f6860b9e121f3a0cdb8370612f
 </project>

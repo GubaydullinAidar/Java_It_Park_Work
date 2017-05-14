@@ -70,7 +70,11 @@ public class AppComponentsFactory {
             Class<UsersDao> usersDaoClass =
                     (Class<UsersDao>) Class.forName(usersDaoClassName);
             Constructor<UsersDao> usersDaoConstructor =
+<<<<<<< HEAD
                     usersDaoClass.getConstructor(Constructor.class);
+=======
+                    usersDaoClass.getConstructor(Connection.class);
+>>>>>>> 17fbc808996140f6860b9e121f3a0cdb8370612f
             UsersDao component =
                     usersDaoConstructor.newInstance(getConnection());
             return component;
