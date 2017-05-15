@@ -1,6 +1,7 @@
 package ru.itpark.dao;
 
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * CRUD - Create Read Update Delete
@@ -37,5 +38,5 @@ public interface BaseCrudDao<T> {
      * Достает ВСЕ данные из хранилища
      * @return список людей
      */
-    LinkedList<T> findAll();
+    List<T> findAll();
 }
