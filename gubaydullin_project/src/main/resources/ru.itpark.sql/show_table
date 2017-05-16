@@ -1,4 +1,0 @@
-SELECT * FROM bank_users;
-
-
-SELECT * FROM users_card;

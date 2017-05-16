@@ -16,10 +16,10 @@ public class Main {
         context.load("ru.itpark\\context.xml");
         context.refresh();
         UsersService usersService = context.getBean(UsersService.class);
-        User user = new User("minimen", "177@mail");
-        usersService.register(user);
-        //User mishaFromBd = usersService.getUserById(5);
-        //System.out.println(mishaFromBd.getId() + " " + mishaFromBd.getName());
+        //User user = new User("minimen", "177@mail");
+        //usersService.register(user);
+        User mishaFromBd = usersService.getUserByMail("27@mail.ru");
+        System.out.println(mishaFromBd.getId() + " " + mishaFromBd.getName());
 
         //List<User> users = usersService.getListOfUsers();
         //System.out.println(users);

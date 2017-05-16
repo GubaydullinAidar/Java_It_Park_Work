@@ -1,15 +1,14 @@
 package ru.itpark.service;
 
-import org.omg.CORBA.INTERNAL;
 import ru.itpark.models.User;
 
 import java.util.List;
 
 public interface UsersService {
 
-    boolean hasName(int userId, String name);
+    boolean hasName(String name, String userMail);
 
-    User getUserById(int userId);
+    User getUserByMail(String userMail);
 
     void register(User user);
 

@@ -23,12 +23,8 @@ public class UsersDaoJdbcImpl implements UsersDao {
             "INSERT INTO bank_users(name, mail) VALUES(:name, :mail)";
 
     //language=SQL
-    private final String SQL_SELECT_USER_BY_ID =
-            "SELECT * FROM bank_users WHERE id = :id";
-
-    //language=SQL
-    private final String SQL_SELECT_ALL =
-            "SELECT * FROM bank_users";
+    private final String SQL_SELECT_USER_BY_MAIL =
+            "SELECT * FROM bank_users WHERE mail = :mail";
 
     //language=SQL
     private final String SQL_DELETE_USER_BY_ID =
@@ -73,10 +69,10 @@ public class UsersDaoJdbcImpl implements UsersDao {
         }
     };
 
-    public User find(int id) {
+    public User find(String mail) {
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("id", id);
-        return template.queryForObject(SQL_SELECT_USER_BY_ID, params, userRowMapper);
+        params.put("mail", mail);
+        return template.queryForObject(SQL_SELECT_USER_BY_MAIL, params, userRowMapper);
     }
 
     public void update(User model) {
@@ -93,11 +89,8 @@ public class UsersDaoJdbcImpl implements UsersDao {
         template.update(SQL_DELETE_USER_BY_ID, params);
     }
 
-    public List<Integer> getCards(int id) {
+    /*public List<Integer> getCards(int id) {
         return template.;
-    }
-
-    /*public List<User> findAll() {
-        return template.query(SQL_SELECT_ALL, userRowMapper);
     }*/
+
 }

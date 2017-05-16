@@ -15,13 +15,13 @@ public class UsersServiceImpl implements UsersService {
     }
 
 
-    public boolean hasName(int userId, String name) {
-        User user = usersDao.find(userId);
+    public boolean hasName(String name, String userMail) {
+        User user = usersDao.find(userMail);
         return user.getName().equals(name);
     }
 
-    public User getUserById(int userId) {
-        return usersDao.find(userId);
+    public User getUserByMail(String userMail) {
+        return usersDao.find(userMail);
     }
 
 
