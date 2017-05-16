@@ -15,4 +15,8 @@ public interface AccountService {
     void update(Account account);
 
     List<Account> getAccounts(int owner_id);
+
+    void debit(int accountDebit, int ammountTransfer);
+
+    public void replenishment(int accountRepl, int ammountTransfer);
 }
