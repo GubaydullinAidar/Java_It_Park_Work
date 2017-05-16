@@ -23,8 +23,8 @@ public class UsersDaoJdbcImpl implements UsersDao {
             "INSERT INTO bank_users(name, mail) VALUES(:name, :mail)";
 
     //language=SQL
-    private final String SQL_SELECT_USER_BY_MAIL =
-            "SELECT * FROM bank_users WHERE mail = :mail";
+    private final String SQL_SELECT_USER_BY_ID =
+            "SELECT * FROM bank_users WHERE id = :id";
 
     //language=SQL
     private final String SQL_DELETE_USER_BY_ID =
@@ -33,10 +33,6 @@ public class UsersDaoJdbcImpl implements UsersDao {
     //language=SQL
     private final String SQL_USER_UPDATE_BY_ID =
             "UPDATE bank_users SET name = :name, mail = :mail WHERE id = :id";
-
-    //language=SQL
-    private final String SQL_GET_CARDS_BY_ID =
-            "SELECT cards FROM users_card WHERE id = :id";
 
     public UsersDaoJdbcImpl(DataSource dataSource) {
         this.template = new NamedParameterJdbcTemplate(dataSource);
@@ -69,10 +65,10 @@ public class UsersDaoJdbcImpl implements UsersDao {
         }
     };
 
-    public User find(String mail) {
+    public User find(int id) {
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("mail", mail);
-        return template.queryForObject(SQL_SELECT_USER_BY_MAIL, params, userRowMapper);
+        params.put("id", id);
+        return template.queryForObject(SQL_SELECT_USER_BY_ID, params, userRowMapper);
     }
 
     public void update(User model) {
@@ -88,9 +84,4 @@ public class UsersDaoJdbcImpl implements UsersDao {
         params.put("id", id);
         template.update(SQL_DELETE_USER_BY_ID, params);
     }
-
-    /*public List<Integer> getCards(int id) {
-        return template.;
-    }*/
-
 }

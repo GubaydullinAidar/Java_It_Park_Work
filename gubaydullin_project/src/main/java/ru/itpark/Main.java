@@ -5,8 +5,6 @@ import org.springframework.core.env.ConfigurableEnvironment;
 import ru.itpark.models.User;
 import ru.itpark.service.UsersService;
 
-import java.util.List;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -18,7 +16,7 @@ public class Main {
         UsersService usersService = context.getBean(UsersService.class);
         //User user = new User("minimen", "177@mail");
         //usersService.register(user);
-        User mishaFromBd = usersService.getUserByMail("27@mail.ru");
+        User mishaFromBd = usersService.getUserById(6);
         System.out.println(mishaFromBd.getId() + " " + mishaFromBd.getName());
 
         //List<User> users = usersService.getListOfUsers();

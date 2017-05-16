@@ -16,10 +16,10 @@ public interface BaseCrudDao<T> {
 
     /**
      * Получить из хранилища модель по его почте
-     * @param mail идентификатор модели
+     * @param id идентификатор модели
      * @return модель
      */
-    T find(String mail);
+    T find(int id);
 
     /**
      * Обновление модели. В model новые данные модели с id из model
@@ -32,12 +32,4 @@ public interface BaseCrudDao<T> {
      * @param id идентификатор модели
      */
     void delete(int id);
-
-    /**
-     * Достает ВСЕ данные из хранилища
-     * @return список людей
-     */
-    /*List<T> findAll();*/
-
-    //List<Integer> getCards(int id);
 }
