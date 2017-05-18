@@ -3,10 +3,7 @@ package ru.itpark.dao;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 import ru.itpark.models.Account;
-import ru.itpark.models.User;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;

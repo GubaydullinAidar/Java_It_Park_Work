@@ -1,1 +1,7 @@
 https://habrahabr.ru/post/274587/
+
+—брос триала
+1) выйти из идеи
+2) удалить <user_home>\.IntelliJIdea13\config\eval\idea13.evaluation.key
+3) удалить все строки, содержащие evl в файле <user_home>\.IntelliJIdea13\config\options\options.xml
+4) запустить идею и оп€ть выбрать триал
