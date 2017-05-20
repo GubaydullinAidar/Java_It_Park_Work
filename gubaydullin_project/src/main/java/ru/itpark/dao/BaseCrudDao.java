@@ -1,5 +1,7 @@
 package ru.itpark.dao;
 
+import ru.itpark.models.User;
+
 import java.util.List;
 
 /**
@@ -32,4 +34,6 @@ public interface BaseCrudDao<T> {
      * @param id идентификатор модели
      */
     void delete(int id);
+
+    List<User> findAll();
 }

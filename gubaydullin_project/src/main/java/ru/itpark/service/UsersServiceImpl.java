@@ -4,6 +4,8 @@ package ru.itpark.service;
 import ru.itpark.dao.UsersDao;
 import ru.itpark.models.User;
 
+import java.util.List;
+
 public class UsersServiceImpl implements UsersService {
 
     private UsersDao usersDao;
@@ -33,5 +35,10 @@ public class UsersServiceImpl implements UsersService {
 
     public void update(User user) {
         usersDao.update(user);
+    }
+
+    @Override
+    public List<User> getListOfUsers() {
+        return usersDao.findAll();
     }
 }

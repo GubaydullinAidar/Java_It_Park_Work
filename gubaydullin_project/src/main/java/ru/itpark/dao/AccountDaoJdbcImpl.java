@@ -4,6 +4,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import ru.itpark.models.Account;
+import ru.itpark.models.User;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -74,6 +75,10 @@ public class AccountDaoJdbcImpl implements AccountDao {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("account", account);
         template.update(SQL_DELETE_ACCOUNT_BY_ID, params);
+    }
+
+    public List<User> findAll() {
+        return null;
     }
 
     public List<Account> findAllAccounts(int owner_id) {

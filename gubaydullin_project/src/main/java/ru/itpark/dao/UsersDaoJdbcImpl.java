@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UsersDaoJdbcImpl implements UsersDao {
@@ -32,6 +33,10 @@ public class UsersDaoJdbcImpl implements UsersDao {
     //language=SQL
     private final String SQL_USER_UPDATE_BY_ID =
             "UPDATE bank_users SET name = :name, mail = :mail WHERE id = :id";
+
+    //language=SQL
+    private final String SQL_SELECT_ALL =
+            "SELECT * FROM bank_users";
 
     public UsersDaoJdbcImpl(DataSource dataSource) {
         this.template = new NamedParameterJdbcTemplate(dataSource);
@@ -82,5 +87,9 @@ public class UsersDaoJdbcImpl implements UsersDao {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("id", id);
         template.update(SQL_DELETE_USER_BY_ID, params);
+    }
+
+    public List<User> findAll() {
+        return template.query(SQL_SELECT_ALL, userRowMapper);
     }
 }
