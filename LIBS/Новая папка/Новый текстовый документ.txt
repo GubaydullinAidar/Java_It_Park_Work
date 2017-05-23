@@ -5,3 +5,10 @@ https://habrahabr.ru/post/274587/
 2) удалить <user_home>\.IntelliJIdea13\config\eval\idea13.evaluation.key
 3) удалить все строки, содержащие evl в файле <user_home>\.IntelliJIdea13\config\options\options.xml
 4) запустить идею и опять выбрать триал
+
+
+https://www.youtube.com/watch?v=vyoDLd6FGZo
+
+http://www.sitehere.ru/forma-registracii-i-vxoda-na-css3html5
+
+https://ru.stackoverflow.com/questions/133059/%D0%90%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-jsp

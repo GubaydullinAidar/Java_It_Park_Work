@@ -57,6 +57,4 @@ public class UsersServlet extends HttpServlet {
             usersService.register(user);
         }
     }
-
-
 }

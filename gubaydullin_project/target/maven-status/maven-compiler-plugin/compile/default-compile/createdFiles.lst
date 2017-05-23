@@ -3,6 +3,7 @@ ru\itpark\dao\UsersDaoJdbcImpl.class
 ru\itpark\dao\BaseCrudDao.class
 ru\itpark\service\UsersService.class
 ru\itpark\dao\AccountDao.class
+ru\itpark\servlet\MainServlet.class
 ru\itpark\dao\AccountDaoJdbcImpl$1.class
 ru\itpark\dao\AccountDaoJdbcImpl.class
 ru\itpark\Main.class
