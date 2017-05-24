@@ -19,7 +19,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/fontomas-webfont.ttf" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/franchise-bold-webfont.svg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/animate-custom.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/demo.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/BebasNeue-webfont.eot" afterPath="" />
@@ -39,26 +38,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/style2.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/style3.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/images/bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/animate-custom.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/demo.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/fonts/BebasNeue-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/fonts/BebasNeue-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/fonts/BebasNeue-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/fonts/BebasNeue-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/fonts/Dharma Type Font License.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/fonts/fontomas-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/fonts/fontomas-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/fonts/fontomas-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/fonts/fontomas-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/fonts/franchise-bold-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/fonts/franchise-bold-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/fonts/franchise-bold-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/fonts/franchise-bold-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/style2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/css/style3.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/images/bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/14.11.2013/main.html" afterPath="" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/14.11.2013/main.html" afterPath="$PROJECT_DIR$/../LIBS/14.11.2013/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl$1.class" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl.class" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl.class" />
@@ -1179,7 +1158,7 @@
       <workItem from="1495393575015" duration="1400000" />
       <workItem from="1495533889769" duration="7671000" />
       <workItem from="1495621898889" duration="9663000" />
-      <workItem from="1495632822752" duration="287000" />
+      <workItem from="1495632822752" duration="416000" />
     </task>
     <task id="LOCAL-00001" summary="project">
       <created>1495632931688</created>
@@ -1188,7 +1167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495632931688</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="project">
+      <created>1495633225040</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1495633225040</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1224,7 +1210,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25924000" />
+    <option name="totallyTimeSpent" value="26053000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="0" />
