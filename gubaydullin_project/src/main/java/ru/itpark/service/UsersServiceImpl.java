@@ -37,7 +37,6 @@ public class UsersServiceImpl implements UsersService {
         usersDao.update(user);
     }
 
-    @Override
     public List<User> getListOfUsers() {
         return usersDao.findAll();
     }

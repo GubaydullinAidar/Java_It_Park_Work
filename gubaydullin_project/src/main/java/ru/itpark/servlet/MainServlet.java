@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class MainServlet extends HttpServlet {
 
@@ -31,10 +32,28 @@ public class MainServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/jsp/main.jsp").forward(request, response);
-        String name = request.getParameter("name");
+        /*String name = request.getParameter("name");
         String mail = request.getParameter("mail");
         User user = new User(name, mail);
-        usersService.register(user);
+        usersService.register(user);*/
     }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/jsp/main.jsp").forward(request, response);
+        /*String name = request.getParameter("name");
+        String mail = request.getParameter("mail");
+        User user = new User(name, mail);
+        usersService.register(user);*/
+        String userNameSignUp = request.getParameter("usernamesignup");
+        String emailSignUp = request.getParameter("emailsignup");
+        //String passwordSignUp = request.getParameter("passwordsignup");
+        User user = new User(userNameSignUp, emailSignUp);
+        usersService.register(user);
+
+        PrintWriter writer = response.getWriter();
+        writer.write("<h6> Регистрация успешно завершена. </h6>");
+    }
+
+
 
 }
