@@ -1,0 +1,10 @@
+INSERT INTO bank_users(name, mail) VALUES('Marsel', '22@mail');
+INSERT INTO bank_users(name, mail) VALUES('Ruslan', '25@mail');
+INSERT INTO bank_users(name, mail) VALUES('Alina', '18@mail');
+INSERT INTO bank_users(name, mail) VALUES('Regina', '19@mail');
+INSERT INTO bank_users(name, mail) VALUES('Rustam', '33@mail');
+INSERT INTO bank_users(name, mail) VALUES('Ilmir', '27@mail.ru');
+INSERT INTO bank_users(name, mail) VALUES('Lenar', '23@mail');
+INSERT INTO bank_users(name, mail) VALUES('Aydar', '27@mail');
+INSERT INTO bank_users(name, mail) VALUES('Misha', '20@mail');
+INSERT INTO bank_users(name, mail) VALUES('Ilyas', '20@mail.ru');

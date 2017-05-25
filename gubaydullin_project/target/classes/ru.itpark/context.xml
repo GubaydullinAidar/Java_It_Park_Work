@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/jdbc
+       http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
+
+    <beans profile="dev">
+
+        <bean id="usersServiceDb" class="ru.itpark.service.UsersServiceImpl">
+            <constructor-arg name="usersDao" ref="usersDaoDb"/>
+        </bean>
+
+        <bean id="usersDaoDb" class="ru.itpark.dao.UsersDaoJdbcImpl">
+            <constructor-arg name="dataSource" ref="dataSource"/>
+        </bean>
+
+        <bean id="accountServiceDb" class="ru.itpark.service.AccountServiceImpl">
+            <constructor-arg name="accountDao" ref="accountDaoDb"/>
+        </bean>
+
+        <bean id="accountDaoDb" class="ru.itpark.dao.AccountDaoJdbcImpl">
+            <constructor-arg name="dataSource" ref="dataSource"/>
+        </bean>
+
+        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+            <constructor-arg name="username" value="postgres"/>
+            <constructor-arg name="password" value="Zaq12wsx"/>
+            <constructor-arg name="url" value="jdbc:postgresql://localhost:5432/gubaydullin_project"/>
+        </bean>
+
+    </beans>
+
+    <beans profile="test-db">
+
+        <bean id="usersDaoTest" class="ru.itpark.dao.UsersDaoJdbcImpl">
+            <constructor-arg name="dataSource" ref="testDataSourceUsers"/>
+        </bean>
+
+        <jdbc:embedded-database id="testDataSourceUsers" type="H2">
+            <jdbc:script location="classpath:ru.itpark.sql/test/users_create_table.sql"/>
+            <jdbc:script location="classpath:ru.itpark.sql/test/test_data_users.sql"/>
+        </jdbc:embedded-database>
+
+        <bean id="accountDaoTest" class="ru.itpark.dao.AccountDaoJdbcImpl">
+            <constructor-arg name="dataSource" ref="testDataSourceAccount"/>
+        </bean>
+
+        <jdbc:embedded-database id="testDataSourceAccount" type="H2">
+            <jdbc:script location="classpath:ru.itpark.sql/test/account_create_table.sql"/>
+            <jdbc:script location="classpath:ru.itpark.sql/test/test_data_account.sql"/>
+        </jdbc:embedded-database>
+
+    </beans>
+
+
+
+</beans>

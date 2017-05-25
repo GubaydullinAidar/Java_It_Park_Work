@@ -1,0 +1,5 @@
+CREATE TABLE bank_users (
+  id SERIAL PRIMARY KEY ,
+  name VARCHAR(30) NOT NULL,
+  mail VARCHAR(30) NOT NULL UNIQUE
+);
