@@ -2,15 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85a8e407-3656-41ae-a81a-1d7e0646db42" name="Default" comment="project">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/itpark/servlet/MainServlet.class" afterPath="$PROJECT_DIR$/target/classes/ru/itpark/servlet/MainServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1.war" afterPath="$PROJECT_DIR$/target/gubaydullin_project-0.1.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/WEB-INF/classes/ru/itpark/servlet/MainServlet.class" afterPath="$PROJECT_DIR$/target/gubaydullin_project-0.1/WEB-INF/classes/ru/itpark/servlet/MainServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/animate-custom.css" afterPath="$PROJECT_DIR$/../LIBS/14.11.2013/css/animate-custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/animate-custom.css" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/animate-custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/itpark/servlet/MainServlet.java" afterPath="$PROJECT_DIR$/src/main/java/ru/itpark/servlet/MainServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/animate-custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/demo.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/fonts/BebasNeue-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/fonts/BebasNeue-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/fonts/BebasNeue-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/fonts/BebasNeue-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/fonts/Dharma Type Font License.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/fonts/fontomas-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/fonts/fontomas-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/fonts/fontomas-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/fonts/fontomas-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/fonts/franchise-bold-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/fonts/franchise-bold-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/fonts/franchise-bold-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/fonts/franchise-bold-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/style2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/style3.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/images/bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/index2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/index3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/main.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/META-INF/maven/ru.itpark/gubaydullin_project/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/service/UsersServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/servlet/MainServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/images/bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/animate-custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/demo.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/BebasNeue-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/BebasNeue-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/BebasNeue-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/BebasNeue-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/Dharma Type Font License.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/fontomas-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/fontomas-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/fontomas-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/fontomas-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/franchise-bold-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/franchise-bold-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/franchise-bold-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/franchise-bold-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/jsp/main.jsp" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,7 +76,7 @@
       <file leaf-file-name="main.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="17">
               <caret line="22" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
@@ -47,7 +86,7 @@
       <file leaf-file-name="MainServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/servlet/MainServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="561">
               <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding />
             </state>
@@ -57,7 +96,7 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/models/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="34">
               <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               <folding />
             </state>
@@ -67,7 +106,7 @@
       <file leaf-file-name="users.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/users.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
+            <state relative-caret-position="714">
               <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="38" />
               <folding />
             </state>
@@ -238,7 +277,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -381,8 +419,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1067,6 +1106,7 @@
       <workItem from="1495621898889" duration="9663000" />
       <workItem from="1495632822752" duration="416000" />
       <workItem from="1495695694683" duration="3413000" />
+      <workItem from="1495711752570" duration="10000" />
     </task>
     <task id="LOCAL-00001" summary="project">
       <created>1495632931688</created>
@@ -1118,7 +1158,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29466000" />
+    <option name="totallyTimeSpent" value="29476000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="0" />
@@ -1137,7 +1177,6 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3986175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33640552" sideWeight="0.49573562" order="13" side_tool="false" content_ui="tabs" x="0" y="364" width="1920" height="311" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -1146,7 +1185,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20954692" sideWeight="0.49305555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21278317" sideWeight="0.49305555" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20307444" sideWeight="0.5069444" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1159,6 +1198,7 @@
       <window_info id="MaxCompute Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33640552" sideWeight="0.49573562" order="13" side_tool="false" content_ui="tabs" x="0" y="364" width="1920" height="311" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1475,7 +1515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1483,7 +1522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1445">
           <caret line="115" column="17" lean-forward="false" selection-start-line="115" selection-start-column="17" selection-end-line="115" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1491,20 +1529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
-          <folding>
-            <element signature="e#2197#2514#0" expanded="true" />
-            <element signature="e#2513#2514#0" expanded="true" />
-            <element signature="e#2596#2612#0" expanded="true" />
-            <element signature="e#2829#2845#0" expanded="true" />
-            <element signature="e#3063#3079#0" expanded="true" />
-            <element signature="e#3358#3374#0" expanded="true" />
-            <marker date="1495632462637" expanded="true" signature="697:752" ph="INSERT INTO bank_users... " />
-            <marker date="1495632462637" expanded="true" signature="837:876" ph="SELECT * FRO... bank_users" />
-            <marker date="1495632462637" expanded="true" signature="963:1006" ph="SELECT * FRO... bank_users" />
-            <marker date="1495632462637" expanded="true" signature="1091:1128" ph="DELETE FROM " />
-            <marker date="1495632462637" expanded="true" signature="1213:1276" ph="UPDATE bank_... " />
-            <marker date="1495632462637" expanded="true" signature="1354:1378" ph="SELECT * FRO... bank_users" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1512,7 +1536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1534,7 +1557,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/models/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="34">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <folding />
         </state>
@@ -1542,7 +1565,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/users.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
+        <state relative-caret-position="714">
           <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="38" />
           <folding />
         </state>
@@ -1552,13 +1575,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8670">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/servlet/MainServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="561">
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
@@ -1566,7 +1588,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/main.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="17">
           <caret line="22" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
