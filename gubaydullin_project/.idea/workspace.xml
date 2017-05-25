@@ -2,55 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85a8e407-3656-41ae-a81a-1d7e0646db42" name="Default" comment="project">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/images/bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/BebasNeue-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/BebasNeue-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/BebasNeue-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/fontomas-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/fontomas-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/franchise-bold-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/franchise-bold-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/franchise-bold-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/animate-custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/demo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/BebasNeue-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/Dharma Type Font License.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/fontomas-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/fontomas-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/fonts/franchise-bold-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/style.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/animate-custom.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/demo.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/BebasNeue-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/BebasNeue-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/BebasNeue-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/BebasNeue-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/Dharma Type Font License.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/fontomas-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/fontomas-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/fontomas-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/fontomas-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/franchise-bold-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/franchise-bold-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/franchise-bold-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/fonts/franchise-bold-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/style2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/css/style3.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/14.11.2013/images/bg.jpg" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/14.11.2013/main.html" afterPath="$PROJECT_DIR$/../LIBS/14.11.2013/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl$1.class" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl.class" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/service/UsersServiceImpl.class" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/WEB-INF/classes/ru/itpark/service/UsersServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/itpark/dao/UsersDaoJdbcImpl$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/itpark/dao/UsersDaoJdbcImpl$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/itpark/dao/UsersDaoJdbcImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/itpark/dao/UsersDaoJdbcImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/itpark/service/UsersServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ru/itpark/service/UsersServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/itpark/servlet/MainServlet.class" afterPath="$PROJECT_DIR$/target/classes/ru/itpark/servlet/MainServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1.war" afterPath="$PROJECT_DIR$/target/gubaydullin_project-0.1.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl$1.class" afterPath="$PROJECT_DIR$/target/gubaydullin_project-0.1/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl.class" afterPath="$PROJECT_DIR$/target/gubaydullin_project-0.1/WEB-INF/classes/ru/itpark/dao/UsersDaoJdbcImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/WEB-INF/classes/ru/itpark/service/UsersServiceImpl.class" afterPath="$PROJECT_DIR$/target/gubaydullin_project-0.1/WEB-INF/classes/ru/itpark/service/UsersServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/META-INF/maven/ru.itpark/gubaydullin_project/pom.properties" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/META-INF/maven/ru.itpark/gubaydullin_project/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/gubaydullin_project-0.1/WEB-INF/classes/ru/itpark/servlet/MainServlet.class" afterPath="$PROJECT_DIR$/target/gubaydullin_project-0.1/WEB-INF/classes/ru/itpark/servlet/MainServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LIBS/14.11.2013/css/animate-custom.css" afterPath="$PROJECT_DIR$/../LIBS/14.11.2013/css/animate-custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/animate-custom.css" afterPath="$PROJECT_DIR$/../LIBS/apache-tomcat-7.0.77/webapps/ROOT/css/main/animate-custom.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/itpark/servlet/MainServlet.java" afterPath="$PROJECT_DIR$/src/main/java/ru/itpark/servlet/MainServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/main.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -75,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="54" lean-forward="false" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="54" />
+            <state relative-caret-position="323">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,8 +47,8 @@
       <file leaf-file-name="MainServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/servlet/MainServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="53" column="66" lean-forward="false" selection-start-line="53" selection-start-column="66" selection-end-line="53" selection-end-column="66" />
+            <state relative-caret-position="216">
+              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,24 +57,9 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/models/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="17">
               <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-              <folding>
-                <element signature="e#377#378#0" expanded="false" />
-                <element signature="e#402#403#0" expanded="false" />
-                <element signature="e#433#434#0" expanded="false" />
-                <element signature="e#460#461#0" expanded="false" />
-                <element signature="e#491#492#0" expanded="false" />
-                <element signature="e#518#519#0" expanded="false" />
-                <element signature="e#551#552#0" expanded="false" />
-                <element signature="e#579#580#0" expanded="false" />
-                <element signature="e#619#620#0" expanded="false" />
-                <element signature="e#651#652#0" expanded="false" />
-                <element signature="e#691#692#0" expanded="false" />
-                <element signature="e#723#724#0" expanded="false" />
-                <element signature="e#769#770#0" expanded="false" />
-                <element signature="e#807#808#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -123,7 +67,7 @@
       <file leaf-file-name="users.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/users.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
+            <state relative-caret-position="284">
               <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="38" />
               <folding />
             </state>
@@ -135,73 +79,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
               <caret line="35" column="41" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="35" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsersServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/service/UsersServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#251#252#0" expanded="false" />
-                <element signature="e#291#292#0" expanded="false" />
-                <element signature="e#500#501#0" expanded="false" />
-                <element signature="e#544#545#0" expanded="false" />
-                <element signature="e#584#585#0" expanded="false" />
-                <element signature="e#652#653#0" expanded="false" />
-                <element signature="e#690#691#0" expanded="false" />
-                <element signature="e#725#726#0" expanded="false" />
-                <element signature="e#762#763#0" expanded="false" />
-                <element signature="e#799#800#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsersDaoJdbcImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/dao/UsersDaoJdbcImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
-              <folding>
-                <element signature="e#2197#2514#0" expanded="true" />
-                <element signature="e#2513#2514#0" expanded="true" />
-                <element signature="e#2596#2612#0" expanded="true" />
-                <element signature="e#2829#2845#0" expanded="true" />
-                <element signature="e#3063#3079#0" expanded="true" />
-                <element signature="e#3358#3374#0" expanded="true" />
-                <marker date="1495632462637" expanded="true" signature="697:752" ph="INSERT INTO bank_users... " />
-                <marker date="1495632462637" expanded="true" signature="837:876" ph="SELECT * FRO... bank_users" />
-                <marker date="1495632462637" expanded="true" signature="963:1006" ph="SELECT * FRO... bank_users" />
-                <marker date="1495632462637" expanded="true" signature="1091:1128" ph="DELETE FROM " />
-                <marker date="1495632462637" expanded="true" signature="1213:1276" ph="UPDATE bank_... " />
-                <marker date="1495632462637" expanded="true" signature="1354:1378" ph="SELECT * FRO... bank_users" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NamedParameterJdbcTemplate.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/4.3.8.RELEASE/spring-jdbc-4.3.8.RELEASE.jar!/org/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1445">
-              <caret line="115" column="17" lean-forward="false" selection-start-line="115" selection-start-column="17" selection-end-line="115" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsersDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/dao/UsersDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -264,10 +141,10 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/main/style3.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/main/demo.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/main.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/itpark/servlet/MainServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/itpark/service/UsersServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/itpark/dao/UsersDaoJdbcImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/main.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/itpark/servlet/MainServlet.java" />
       </list>
     </option>
   </component>
@@ -361,7 +238,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -471,11 +348,41 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gubaydullin_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gubaydullin_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1159,6 +1066,7 @@
       <workItem from="1495533889769" duration="7671000" />
       <workItem from="1495621898889" duration="9663000" />
       <workItem from="1495632822752" duration="416000" />
+      <workItem from="1495695694683" duration="3413000" />
     </task>
     <task id="LOCAL-00001" summary="project">
       <created>1495632931688</created>
@@ -1210,7 +1118,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26053000" />
+    <option name="totallyTimeSpent" value="29466000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="0" />
@@ -1238,7 +1146,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20631067" sideWeight="0.49305555" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20954692" sideWeight="0.49305555" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20307444" sideWeight="0.5069444" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1306,14 +1214,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/itpark/servlet/MainServlet.java</url>
-          <line>49</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
@@ -1510,28 +1410,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="68" lean-forward="false" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/14.11.2013/css/style3.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="78" lean-forward="true" selection-start-line="12" selection-start-column="78" selection-end-line="12" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/14.11.2013/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="86" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/14.11.2013/css/style3.css" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/14.11.2013/main.html" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/input-style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1542,13 +1422,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/images/bg.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main/animate-custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9588">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/images/bg.jpg">
@@ -1598,83 +1471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="54" lean-forward="false" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/users.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/servlet/MainServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="53" column="66" lean-forward="false" selection-start-line="53" selection-start-column="66" selection-end-line="53" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding>
-            <element signature="e#377#378#0" expanded="false" />
-            <element signature="e#402#403#0" expanded="false" />
-            <element signature="e#433#434#0" expanded="false" />
-            <element signature="e#460#461#0" expanded="false" />
-            <element signature="e#491#492#0" expanded="false" />
-            <element signature="e#518#519#0" expanded="false" />
-            <element signature="e#551#552#0" expanded="false" />
-            <element signature="e#579#580#0" expanded="false" />
-            <element signature="e#619#620#0" expanded="false" />
-            <element signature="e#651#652#0" expanded="false" />
-            <element signature="e#691#692#0" expanded="false" />
-            <element signature="e#723#724#0" expanded="false" />
-            <element signature="e#769#770#0" expanded="false" />
-            <element signature="e#807#808#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/servlet/UsersServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="35" column="41" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="35" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/service/UsersServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#251#252#0" expanded="false" />
-            <element signature="e#291#292#0" expanded="false" />
-            <element signature="e#500#501#0" expanded="false" />
-            <element signature="e#544#545#0" expanded="false" />
-            <element signature="e#584#585#0" expanded="false" />
-            <element signature="e#652#653#0" expanded="false" />
-            <element signature="e#690#691#0" expanded="false" />
-            <element signature="e#725#726#0" expanded="false" />
-            <element signature="e#762#763#0" expanded="false" />
-            <element signature="e#799#800#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/dao/UsersDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1709,6 +1505,70 @@
             <marker date="1495632462637" expanded="true" signature="1213:1276" ph="UPDATE bank_... " />
             <marker date="1495632462637" expanded="true" signature="1354:1378" ph="SELECT * FRO... bank_users" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/service/UsersServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="68" lean-forward="false" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/servlet/UsersServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="35" column="41" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="35" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/users.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main/animate-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8670">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/itpark/servlet/MainServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

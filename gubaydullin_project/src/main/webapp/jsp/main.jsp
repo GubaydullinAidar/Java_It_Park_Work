@@ -49,7 +49,7 @@
                 </div>
 
                 <div id="register" class="animate form">
-                    <form  action="" autocomplete="on" method="post">
+                    <form  action="/main" autocomplete="on" method="post">
                         <h1> Регистрация </h1>
                         <p>
                             <label for="usernamesignup" class="uname" data-icon="u">Ваш логин</label>
@@ -74,6 +74,7 @@
                             Уже зарегистрированы ?
                             <a href="#tologin" class="to_register"> Войдите на сайт </a>
                         </p>
+
                     </form>
                 </div>
             </div>

@@ -40,10 +40,8 @@ public class MainServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/jsp/main.jsp").forward(request, response);
-        /*String name = request.getParameter("name");
-        String mail = request.getParameter("mail");
-        User user = new User(name, mail);
-        usersService.register(user);*/
+
+
         String userNameSignUp = request.getParameter("usernamesignup");
         String emailSignUp = request.getParameter("emailsignup");
         //String passwordSignUp = request.getParameter("passwordsignup");
@@ -51,7 +49,8 @@ public class MainServlet extends HttpServlet {
         usersService.register(user);
 
         PrintWriter writer = response.getWriter();
-        writer.write("<h6> Регистрация успешно завершена. </h6>");
+        writer.write("<nav Регистрация успешно завершена. </nav>");
+
     }
 
 

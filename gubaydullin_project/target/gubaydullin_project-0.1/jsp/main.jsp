@@ -49,7 +49,7 @@
                 </div>
 
                 <div id="register" class="animate form">
-                    <form  action="" autocomplete="on" method="post">
+                    <form  action="/main" autocomplete="on" method="post">
                         <h1> Регистрация </h1>
                         <p>
                             <label for="usernamesignup" class="uname" data-icon="u">Ваш логин</label>
