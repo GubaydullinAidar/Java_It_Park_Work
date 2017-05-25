@@ -6,7 +6,7 @@
 	 font-family: "Trebuchet MS","Myriad Pro",Arial,sans-serif;
 }
 
-/** шрифты **/ 
+/** пїЅпїЅпїЅпїЅпїЅпїЅ **/ 
 @font-face {
     font-family: 'FontomasCustomRegular';
     src: url('fonts/fontomas-webfont.eot');
@@ -31,18 +31,18 @@
 a.hiddenanchor{
 	display: none;
 }
-/** контейнер, содержащий наши формы **/
+/** пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ **/
 #wrapper{
 	width: 60%;
-	right: 0px;
+	right: 350px;
 	min-height: 560px;	
 	margin: 0px auto;	
 	width: 500px;
 	position: relative;	
 }
-/**** Стиль для элементов **/
+/**** пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ **/
 
-/**** Стиль текстовых элементов ****/
+/**** пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ****/
 #wrapper a{
 	color: rgb(95, 155, 198);
 	text-decoration: underline;
@@ -57,7 +57,7 @@ a.hiddenanchor{
 	text-align: center;
 	padding-bottom: 30px;
 }
-/** Только webkit браузеры поодерживают background-clip:text; */
+/** пїЅпїЅпїЅпїЅпїЅпїЅ webkit пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ background-clip:text; */
 #wrapper h1{
     background: -webkit-repeating-linear-gradient(-45deg, 
 	rgb(18, 83, 93) , 
@@ -93,7 +93,7 @@ a.hiddenanchor{
 	position: relative;
 }
 
-/**** Стиль для input-ов ****/
+/**** пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ input-пїЅпїЅ ****/
 ::-webkit-input-placeholder  { 
 	color: rgb(190, 188, 188); 
 	font-style: italic;
@@ -136,7 +136,7 @@ input {
 	        box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
 } 
 
-/** Хак для иконки ! **/
+/** пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ ! **/
 [data-icon]:after {
     content: attr(data-icon);
     font-family: 'FontomasCustomRegular';
@@ -210,7 +210,7 @@ p.signin.button{
 	width: 80%;
 }
 
-/*Стиль для ссылки изменения формы регистрации/входа */
+/*пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅпїЅпїЅ */
 
 p.change_link{
 	position: absolute;
@@ -282,7 +282,7 @@ p.change_link{
 	position: relative;
 	top: 1px;
 }
-/** Стиль формы **/
+/** пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ **/
 #register, 
 #login{
 	position: absolute;
@@ -339,7 +339,7 @@ p.change_link{
 	animation-name: scaleOut;
 }
 
-/** анимация: http://daneden.me/animate/ ***/
+/** пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: http://daneden.me/animate/ ***/
 .animate{
 	-webkit-animation-duration: 0.5s;
 	-webkit-animation-fill-mode: both;
