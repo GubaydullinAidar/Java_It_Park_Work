@@ -20,7 +20,7 @@ public class UsersDaoJdbcImpl implements UsersDao {
 
     //language=SQL
     private final String SQL_INSERT_USER =
-            "INSERT INTO bank_users(name, mail) VALUES(:name, :mail)";
+            "INSERT INTO bank_users(name, mail, password) VALUES(:name, :mail, :password)";
 
     //language=SQL
     private final String SQL_SELECT_USER_BY_ID =
@@ -36,7 +36,7 @@ public class UsersDaoJdbcImpl implements UsersDao {
 
     //language=SQL
     private final String SQL_USER_UPDATE_BY_ID =
-            "UPDATE bank_users SET name = :name, mail = :mail WHERE id = :id";
+            "UPDATE bank_users SET name = :name, mail = :mail, password = :password WHERE id = :id";
 
     //language=SQL
     private final String SQL_SELECT_ALL =
@@ -51,6 +51,7 @@ public class UsersDaoJdbcImpl implements UsersDao {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("name", model.getName());
         params.addValue("mail", model.getMail());
+        params.addValue("password", model.getPassword());
 
         String interestingKeys[] = {"id"};
 
@@ -68,8 +69,9 @@ public class UsersDaoJdbcImpl implements UsersDao {
             int id = resultSet.getInt("id");
             String name = resultSet.getString("name");
             String mail = resultSet.getString("mail");
+            String password = resultSet.getString("password");
 
-            return new User(id, name, mail);
+            return new User(id, name, mail, password);
         }
     };
 
@@ -90,6 +92,7 @@ public class UsersDaoJdbcImpl implements UsersDao {
         params.put("id", model.getId());
         params.put("name", model.getName());
         params.put("mail", model.getMail());
+        params.put("password", model.getPassword());
         template.update(SQL_USER_UPDATE_BY_ID, params);
     }
 

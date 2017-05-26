@@ -45,7 +45,7 @@
                 </div>
 
                 <div id="register" class="animate form">
-                    <form  action="/main/reg" autocomplete="on" method="post">
+                    <form  action="reg.jsp" autocomplete="on" method="post">
                         <h1> Регистрация </h1>
                         <p>
                             <label for="usernamesignup" class="uname" data-icon="u">Ваш логин</label>

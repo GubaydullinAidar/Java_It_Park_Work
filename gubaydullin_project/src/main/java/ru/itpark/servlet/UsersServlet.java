@@ -53,7 +53,8 @@ public class UsersServlet extends HttpServlet {
         } else {
             String name = request.getParameter("name");
             String mail = request.getParameter("mail");
-            User user = new User(name, mail);
+            String password = request.getParameter("password");
+            User user = new User(name, mail, password);
             usersService.register(user);
         }
     }

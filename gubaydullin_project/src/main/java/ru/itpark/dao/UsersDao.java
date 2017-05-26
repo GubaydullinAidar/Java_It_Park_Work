@@ -4,4 +4,6 @@ import ru.itpark.models.User;
 
 public interface UsersDao extends BaseCrudDao<User> {
 
+    public User findByMail(String mail);
+
 }

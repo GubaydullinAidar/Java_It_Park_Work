@@ -32,10 +32,6 @@ public class MainServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/jsp/main.jsp").forward(request, response);
-        /*String name = request.getParameter("name");
-        String mail = request.getParameter("mail");
-        User user = new User(name, mail);
-        usersService.register(user);*/
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -43,16 +39,18 @@ public class MainServlet extends HttpServlet {
 
         String userNameSignUp = request.getParameter("usernamesignup");
         String emailSignUp = request.getParameter("emailsignup");
-        if (userNameSignUp != null) {
-            //String passwordSignUp = request.getParameter("passwordsignup");
-            User user = new User(userNameSignUp, emailSignUp);
+        String passwordSignUp = request.getParameter("passwordsignup");
+        String passwordSignUp_confirm = request.getParameter("passwordsignup_confirm");
+
+        if (passwordSignUp.equals(passwordSignUp_confirm)) {
+            User user = new User(userNameSignUp, emailSignUp, passwordSignUp);
             usersService.register(user);
-            request.getRequestDispatcher("/jsp/reg.jsp").forward(request, response);
+            //request.getRequestDispatcher("/jsp/reg.jsp").forward(request, response);
         }
 
-        PrintWriter writer = response.getWriter();
+        /*PrintWriter writer = response.getWriter();
         writer.write("<nav Регистрация успешно завершена. </nav>");
-
+*/
     }
 
 

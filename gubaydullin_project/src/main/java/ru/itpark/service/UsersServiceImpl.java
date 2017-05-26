@@ -14,16 +14,11 @@ public class UsersServiceImpl implements UsersService {
         this.usersDao = usersDao;
     }
 
-
-    public boolean hasName(int userId, String name, String userMail) {
-        User user = usersDao.find(userId);
-        return user.getName().equals(name);
-    }
-
     public User getUserById(int userId) {
         return usersDao.find(userId);
     }
 
+    public User getUserByMail(String userMail) { return usersDao.findByMail(userMail); }
 
     public void register(User user) {
         System.out.println("USER ID " + usersDao.save(user));
