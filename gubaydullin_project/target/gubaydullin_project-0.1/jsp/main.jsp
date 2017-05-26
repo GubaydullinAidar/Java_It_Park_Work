@@ -23,7 +23,7 @@
                     <form  action="" autocomplete="on" method="post">
                         <h1>Вход</h1>
                         <p>
-                            <label for="username" class="uname" data-icon="u" > Ваш e-mail или логин</label>
+                            <label for="username" class="uname" data-icon="u" > Ваш логин</label>
                             <input id="username" name="username" required="required" type="text" placeholder="sitehere или sitehere.ru@my.com"/>
                         </p>
                         <p>
@@ -45,7 +45,7 @@
                 </div>
 
                 <div id="register" class="animate form">
-                    <form  action="reg.jsp" autocomplete="on" method="post">
+                    <form action="" autocomplete="on" method="post">
                         <h1> Регистрация </h1>
                         <p>
                             <label for="usernamesignup" class="uname" data-icon="u">Ваш логин</label>

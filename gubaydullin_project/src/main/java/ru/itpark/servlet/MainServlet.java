@@ -45,12 +45,8 @@ public class MainServlet extends HttpServlet {
         if (passwordSignUp.equals(passwordSignUp_confirm)) {
             User user = new User(userNameSignUp, emailSignUp, passwordSignUp);
             usersService.register(user);
-            //request.getRequestDispatcher("/jsp/reg.jsp").forward(request, response);
         }
 
-        /*PrintWriter writer = response.getWriter();
-        writer.write("<nav Регистрация успешно завершена. </nav>");
-*/
     }
 
 

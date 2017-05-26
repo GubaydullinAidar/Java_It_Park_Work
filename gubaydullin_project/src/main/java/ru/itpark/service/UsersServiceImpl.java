@@ -18,7 +18,7 @@ public class UsersServiceImpl implements UsersService {
         return usersDao.find(userId);
     }
 
-    public User getUserByMail(String userMail) { return usersDao.findByMail(userMail); }
+    public User getUserByName(String userName) { return usersDao.findByName(userName); }
 
     public void register(User user) {
         System.out.println("USER ID " + usersDao.save(user));

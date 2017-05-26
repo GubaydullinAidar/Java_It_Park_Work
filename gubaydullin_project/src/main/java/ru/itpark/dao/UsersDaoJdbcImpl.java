@@ -27,8 +27,8 @@ public class UsersDaoJdbcImpl implements UsersDao {
             "SELECT * FROM bank_users WHERE id = :id";
 
     //language=SQL
-    private final String SQL_SELECT_USER_BY_MAIL =
-            "SELECT * FROM bank_users WHERE mail = :mail";
+    private final String SQL_SELECT_USER_BY_NAME =
+            "SELECT * FROM bank_users WHERE name = :name";
 
     //language=SQL
     private final String SQL_DELETE_USER_BY_ID =
@@ -81,10 +81,10 @@ public class UsersDaoJdbcImpl implements UsersDao {
         return template.queryForObject(SQL_SELECT_USER_BY_ID, params, userRowMapper);
     }
 
-    public User findByMail(String mail) {
+    public User findByName(String name) {
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("mail", mail);
-        return template.queryForObject(SQL_SELECT_USER_BY_MAIL, params, userRowMapper);
+        params.put("name", name);
+        return template.queryForObject(SQL_SELECT_USER_BY_NAME, params, userRowMapper);
     }
 
     public void update(User model) {

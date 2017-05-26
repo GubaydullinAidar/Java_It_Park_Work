@@ -25,4 +25,14 @@
         <servlet-name>MainServlet</servlet-name>
         <url-pattern>/main</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AuthController</servlet-name>
+        <servlet-class>ru.itpark.servlet.AuthController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AuthController</servlet-name>
+        <url-pattern>/first</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -28,6 +28,7 @@
         <th>Id</th>
         <th>Name</th>
         <th>Mail</th>
+        <th>Password</th>
     </tr>
     </thead>
     <c:forEach items="${requestScope.users}" var="user">
@@ -35,6 +36,7 @@
             <td><c:out value="${user.id}"/></td>
             <td><c:out value="${user.name}"/></td>
             <td><c:out value="${user.mail}"/></td>
+            <td><c:out value="${user.password}"/></td>
         </tr>
     </c:forEach>
 </table>
@@ -43,6 +45,7 @@
     <form action="/users" method="get">
         <input type="text" name="name" placeholder="name" />
         <input type="text" name="mail" placeholder="mail" />
+        <input type="text" name="password" placeholder="password">
         <input type="submit" />
     </form>
 </div>

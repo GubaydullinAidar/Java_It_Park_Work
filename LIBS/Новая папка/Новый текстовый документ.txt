@@ -6,6 +6,8 @@ https://habrahabr.ru/post/274587/
 3) удалить все строки, содержащие evl в файле <user_home>\.IntelliJIdea13\config\options\options.xml
 4) запустить идею и опять выбрать триал
 
+Переход между jsp
+https://toster.ru/q/418600
 
 https://www.youtube.com/watch?v=vyoDLd6FGZo
 
