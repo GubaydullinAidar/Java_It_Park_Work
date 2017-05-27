@@ -30,10 +30,10 @@ public class AuthController extends HttpServlet {
         request.getSession().setAttribute("user", user);
 
         if (login.equals(user.getName()) && password.equals(user.getPassword())) {
-            request.getRequestDispatcher("webapp/jsp/first.jsp").forward(request, response);
+            request.getRequestDispatcher("jsp/first.jsp").forward(request, response);
         } else {
             request.setAttribute("errorMessage", "Login or password incorrect");
-            request.getRequestDispatcher("main.jsp").forward(request, response);
+            request.getRequestDispatcher("jsp/main.jsp").forward(request, response);
         }
     }
 }

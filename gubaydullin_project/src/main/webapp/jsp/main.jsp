@@ -20,7 +20,7 @@
             <a class="hiddenanchor" id="tologin"></a>
             <div id="wrapper">
                 <div id="login" class="animate form">
-                    <form  action="AuthController.java" autocomplete="on" method="post">
+                    <form  action="AuthController" autocomplete="on" method="post">
                         <h1>Вход</h1>
                         <p>
                             <label for="username" class="uname" data-icon="u" > Ваш логин</label>
