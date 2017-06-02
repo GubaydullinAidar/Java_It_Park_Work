@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ru.itpark.models.Account" table="users_accounts" catalog="public">
+        <id name="account" type="java.lang.Integer">
+            <column name="account"/>
+        </id>
+
+        <property name="balance"/>
+    </class>
+</hibernate-mapping>
