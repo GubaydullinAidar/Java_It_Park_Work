@@ -1,0 +1,6 @@
+ru\itpark\vk\api\core\VkApi.class
+ru\itpark\vk\models\Friends.class
+ru\itpark\Main.class
+ru\itpark\vk\api\core\ApiBuilder.class
+ru\itpark\vk\models\Friend.class
+ru\itpark\vk\api\core\VkApiRestTemplateImpl.class

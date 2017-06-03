@@ -24,6 +24,7 @@ public class User {
     @Transient
     private String confirmPassword;
 
+
     private List<Account> accounts;
 
     public User(int id, String name, String mail, String password) {

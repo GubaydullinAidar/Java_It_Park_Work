@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="itpark_group@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.1">
+    <root id="1"/>
+    <database id="2" parent="1" name="itpark_group">
+      <ObjectId>16393</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-06-03.16:25:45.079</IntrospectionTimestamp>
+      <IntrospectionStateNumber>619</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11816</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11817</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>12081</ObjectId>
+    </schema>
+    <sequence id="9" parent="3" name="auto_id_seq">
+      <ObjectId>16402</ObjectId>
+      <StateNumber>619</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="10" parent="3" name="it_park_user_id_seq">
+      <ObjectId>16394</ObjectId>
+      <StateNumber>618</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="11" parent="3" name="auto">
+      <ObjectId>16404</ObjectId>
+      <StateNumber>619</StateNumber>
+    </table>
+    <table id="12" parent="3" name="it_park_user">
+      <ObjectId>16396</ObjectId>
+      <StateNumber>619</StateNumber>
+    </table>
+    <column id="13" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>619</StateNumber>
+      <SequenceName>auto_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;auto_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="14" parent="11" name="model">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <StateNumber>619</StateNumber>
+    </column>
+    <column id="15" parent="11" name="owner_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>619</StateNumber>
+    </column>
+    <index id="16" parent="11" name="auto_pkey">
+      <ObjectId>16408</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="17" parent="11" name="auto_pkey">
+      <ObjectId>16409</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>auto_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="18" parent="11" name="auto_owner_id_fkey">
+      <ObjectId>16410</ObjectId>
+      <ColNames>owner_id</ColNames>
+      <RefTableName>it_park_user</RefTableName>
+      <RefKeyName>it_park_user_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="19" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>618</StateNumber>
+      <SequenceName>it_park_user_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;it_park_user_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="20" parent="12" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <StateNumber>618</StateNumber>
+    </column>
+    <column id="21" parent="12" name="age">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>618</StateNumber>
+    </column>
+    <index id="22" parent="12" name="it_park_user_pkey">
+      <ObjectId>16400</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="23" parent="12" name="it_park_user_pkey">
+      <ObjectId>16401</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>it_park_user_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
