@@ -3,14 +3,14 @@
   <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.2">
     <root id="1"/>
     <database id="2" parent="1" name="gubaydullin_project">
-      <ObjectId>16532</ObjectId>
+      <ObjectId>24576</ObjectId>
       <Current>1</Current>
       <Visible>1</Visible>
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-06-02.09:26:23.030</IntrospectionTimestamp>
-      <IntrospectionStateNumber>730</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-06-02.23:40:33.828</IntrospectionTimestamp>
+      <IntrospectionStateNumber>692</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -21,33 +21,33 @@
       <ObjectId>99</ObjectId>
     </schema>
     <schema id="6" parent="2" name="pg_temp_1">
-      <ObjectId>11848</ObjectId>
+      <ObjectId>11194</ObjectId>
     </schema>
     <schema id="7" parent="2" name="pg_toast_temp_1">
-      <ObjectId>11849</ObjectId>
+      <ObjectId>11195</ObjectId>
     </schema>
     <schema id="8" parent="2" name="information_schema">
-      <ObjectId>12113</ObjectId>
+      <ObjectId>11459</ObjectId>
     </schema>
     <sequence id="9" parent="3" name="bank_users_id_seq">
-      <ObjectId>16593</ObjectId>
-      <StateNumber>730</StateNumber>
+      <ObjectId>32768</ObjectId>
+      <StateNumber>692</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <table id="10" parent="3" name="bank_users">
-      <ObjectId>16595</ObjectId>
-      <StateNumber>730</StateNumber>
+      <ObjectId>32770</ObjectId>
+      <StateNumber>692</StateNumber>
     </table>
     <table id="11" parent="3" name="users_accounts">
-      <ObjectId>16603</ObjectId>
-      <StateNumber>730</StateNumber>
+      <ObjectId>32778</ObjectId>
+      <StateNumber>692</StateNumber>
     </table>
     <column id="12" parent="10" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>730</StateNumber>
+      <StateNumber>692</StateNumber>
       <SequenceName>bank_users_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;bank_users_id_seq&apos;::regclass)</DefaultExpression>
     </column>
@@ -55,71 +55,71 @@
       <Position>2</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>730</StateNumber>
+      <StateNumber>692</StateNumber>
     </column>
     <column id="14" parent="10" name="mail">
       <Position>3</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>730</StateNumber>
+      <StateNumber>692</StateNumber>
     </column>
     <column id="15" parent="10" name="password">
       <Position>4</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>730</StateNumber>
+      <StateNumber>692</StateNumber>
     </column>
     <index id="16" parent="10" name="bank_users_pkey">
-      <ObjectId>16599</ObjectId>
+      <ObjectId>32774</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <index id="17" parent="10" name="bank_users_mail_key">
-      <ObjectId>16601</ObjectId>
+      <ObjectId>32776</ObjectId>
       <ColNames>mail</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="18" parent="10" name="bank_users_pkey">
-      <ObjectId>16600</ObjectId>
+      <ObjectId>32775</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>bank_users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <key id="19" parent="10" name="bank_users_mail_key">
-      <ObjectId>16602</ObjectId>
+      <ObjectId>32777</ObjectId>
       <ColNames>mail</ColNames>
       <UnderlyingIndexName>bank_users_mail_key</UnderlyingIndexName>
     </key>
     <column id="20" parent="11" name="owner_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>730</StateNumber>
+      <StateNumber>692</StateNumber>
     </column>
     <column id="21" parent="11" name="account">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>730</StateNumber>
+      <StateNumber>692</StateNumber>
     </column>
     <column id="22" parent="11" name="balance">
       <Position>3</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>730</StateNumber>
+      <StateNumber>692</StateNumber>
       <DefaultExpression>0</DefaultExpression>
     </column>
     <index id="23" parent="11" name="users_accounts_account_key">
-      <ObjectId>16607</ObjectId>
+      <ObjectId>32782</ObjectId>
       <ColNames>account</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="24" parent="11" name="users_accounts_account_key">
-      <ObjectId>16608</ObjectId>
+      <ObjectId>32783</ObjectId>
       <ColNames>account</ColNames>
       <UnderlyingIndexName>users_accounts_account_key</UnderlyingIndexName>
     </key>
     <foreign-key id="25" parent="11" name="users_accounts_owner_id_fkey">
-      <ObjectId>16609</ObjectId>
+      <ObjectId>32784</ObjectId>
       <ColNames>owner_id</ColNames>
       <RefTableName>bank_users</RefTableName>
       <RefKeyName>bank_users_pkey</RefKeyName>

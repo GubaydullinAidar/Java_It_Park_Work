@@ -11,7 +11,7 @@ import ru.itpark.services.UsersService;
 public class SimpleController {
 
     @Autowired
-    private UsersService service;
+    private UsersService usersService;
 
     /*@GetMapping("/users")
     public List<User> getFriends(@RequestParam("age") int age) {
@@ -20,7 +20,7 @@ public class SimpleController {
 */
     @GetMapping(value = "users/{user-id}", params = "select=with_auto")
     public User getUserWithAccount(@PathVariable("user-id") int userId) {
-        return service.getUserWithAccount(userId);
+        return usersService.getUserWithAccount(userId);
     }
 
     @GetMapping("/main")
@@ -30,17 +30,20 @@ public class SimpleController {
 
     @GetMapping("/first")
     public String getLoginPage() {
-        return "first";
+        return "/jsp/first";
     }
 
     @RequestMapping(value = "/main",method = RequestMethod.POST)
-    public String test(@RequestParam("userNameSignUp") String userNameSignUp,
-                       @RequestParam("emailsignup") String emailsignup,
-                       @RequestParam("passwordsignup") String passwordsignup,
-                       @RequestParam("passwordsignup_confirm") String passwordsignup_confirm,
-                       Model model){
-        model.addAttribute("userNameSignUp", userNameSignUp);
-        return "hello";
+    public String test(@RequestParam("usernamesignup") String userNameSignUp,
+                       @RequestParam("emailsignup") String emailSignUp,
+                       @RequestParam("passwordsignup") String passwordSignUp,
+                       @RequestParam("passwordsignup_confirm") String passwordSignUp_confirm){
+        if (passwordSignUp.equals(passwordSignUp_confirm)) {
+            User user = new User(userNameSignUp, emailSignUp, passwordSignUp);
+            usersService.register(user);
+            return "redirect:/first";
+        } else
+            return "redirect:/main";
     }
 
 }

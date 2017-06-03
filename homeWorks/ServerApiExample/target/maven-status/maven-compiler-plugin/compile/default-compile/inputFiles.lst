@@ -1,4 +1,3 @@
-C:\Java\Java_It_Park_Work\homeWorks\ServerApiExample\src\main\java\ru\itpark\models\Auto.java
 C:\Java\Java_It_Park_Work\homeWorks\ServerApiExample\src\main\java\ru\itpark\models\User.java
 C:\Java\Java_It_Park_Work\homeWorks\ServerApiExample\src\main\java\ru\itpark\config\AppConfig.java
 C:\Java\Java_It_Park_Work\homeWorks\ServerApiExample\src\main\java\ru\itpark\controllers\SimpleController.java
@@ -7,6 +6,7 @@ C:\Java\Java_It_Park_Work\homeWorks\ServerApiExample\src\main\java\ru\itpark\dao
 C:\Java\Java_It_Park_Work\homeWorks\ServerApiExample\src\main\java\ru\itpark\servlet\MainServlet.java
 C:\Java\Java_It_Park_Work\homeWorks\ServerApiExample\src\main\java\ru\itpark\servlet\AuthController.java
 C:\Java\Java_It_Park_Work\homeWorks\ServerApiExample\src\main\java\ru\itpark\dao\UsersDao.java
+C:\Java\Java_It_Park_Work\homeWorks\ServerApiExample\src\main\java\ru\itpark\validator\UserValidator.java
 C:\Java\Java_It_Park_Work\homeWorks\ServerApiExample\src\main\java\ru\itpark\servlet\UsersServlet.java
 C:\Java\Java_It_Park_Work\homeWorks\ServerApiExample\src\main\java\ru\itpark\services\UsersService.java
 C:\Java\Java_It_Park_Work\homeWorks\ServerApiExample\src\main\java\ru\itpark\services\UsersServiceImpl.java

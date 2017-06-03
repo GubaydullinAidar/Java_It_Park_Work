@@ -1,12 +1,29 @@
 package ru.itpark.models;
 
+import javax.persistence.*;
 import java.util.List;
 
+
+@Entity
+@Table(name = "bank_users")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "mail")
     private String mail;
+
+    @Column(name = "password")
     private String password;
+
+    @Transient
+    private String confirmPassword;
+
     private List<Account> accounts;
 
     public User(int id, String name, String mail, String password) {

@@ -20,7 +20,7 @@
             <a class="hiddenanchor" id="tologin"></a>
             <div id="wrapper">
                 <div id="login" class="animate form">
-                    <form  action="AuthController" autocomplete="on" method="post">
+                    <form  action="" autocomplete="on" method="post">
                         <h1>Вход</h1>
                         <p>
                             <label for="username" class="uname" data-icon="u" > Ваш логин</label>
@@ -45,7 +45,7 @@
                 </div>
 
                 <div id="register" class="animate form">
-                    <form action="" autocomplete="on" method="post">
+                    <form autocomplete="on" method="post">
                         <h1> Регистрация </h1>
                         <p>
                             <label for="usernamesignup" class="uname" data-icon="u">Ваш логин</label>
