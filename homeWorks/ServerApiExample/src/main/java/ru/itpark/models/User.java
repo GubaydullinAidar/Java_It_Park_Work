@@ -3,29 +3,33 @@ package ru.itpark.models;
 import javax.persistence.*;
 import java.util.List;
 
-
 @Entity
 @Table(name = "bank_users")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name")
+    @Column
     private String name;
 
-    @Column(name = "mail")
+    @Column
     private String mail;
 
-    @Column(name = "password")
+    @Column
     private String password;
 
-    @Transient
-    private String confirmPassword;
-
-
+    @OneToMany
+    @JoinTable(name = "users_accounts",
+            joinColumns =
+            @JoinColumn(name = "owner_id"),
+            inverseJoinColumns =
+            @JoinColumn(name = "id"))
     private List<Account> accounts;
+
+    public User() {
+    }
 
     public User(int id, String name, String mail, String password) {
         this.id = id;
@@ -40,9 +44,6 @@ public class User {
         this.password = password;
     }
 
-    public User() {
-    }
-
     public int getId() {
         return id;
     }
@@ -55,20 +56,12 @@ public class User {
         return mail;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public void setPassword(String password) {
@@ -85,7 +78,7 @@ public class User {
 
     @Override
     public String toString() {
-        return id + " " + name;
+        return name;
     }
 
     @Override
@@ -100,7 +93,8 @@ public class User {
         User that = (User) object;
 
         return this.id == that.id &&
+                this.name.equals(that.name) &&
                 this.mail.equals(that.mail) &&
-                this.name.equals(that.name);
+                this.password.equals(that.password);
     }
 }

@@ -31,8 +31,8 @@ public class UsersDaoJdbcImpl implements UsersDao {
             "SELECT * FROM bank_users WHERE id = :id";
 
     //language=SQL
-    private final String SQL_SELECT_USER_BY_NAME =
-            "SELECT * FROM bank_users WHERE name = :name";
+    private final String SQL_SELECT_ALL =
+            "SELECT * FROM bank_users";
 
     //language=SQL
     private final String SQL_DELETE_USER_BY_ID =
@@ -43,8 +43,8 @@ public class UsersDaoJdbcImpl implements UsersDao {
             "UPDATE bank_users SET name = :name, mail = :mail, password = :password WHERE id = :id";
 
     //language=SQL
-    private final String SQL_SELECT_ALL =
-            "SELECT * FROM bank_users";
+    private final String SQL_SELECT_USERS_BY_MAIL =
+            "SELECT * FROM bank_users WHERE mail = :mail";
 
     private NamedParameterJdbcTemplate template;
 
@@ -63,6 +63,7 @@ public class UsersDaoJdbcImpl implements UsersDao {
         params.addValue("mail", model.getMail());
         params.addValue("password", model.getPassword());
 
+
         String interestingKeys[] = {"id"};
 
         // держатель сгенерированного ключа вставленной строки
@@ -80,7 +81,6 @@ public class UsersDaoJdbcImpl implements UsersDao {
             String name = resultSet.getString("name");
             String mail = resultSet.getString("mail");
             String password = resultSet.getString("password");
-
             return new User(id, name, mail, password);
         }
     };
@@ -89,12 +89,6 @@ public class UsersDaoJdbcImpl implements UsersDao {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("id", id);
         return template.queryForObject(SQL_SELECT_USER_BY_ID, params, userRowMapper);
-    }
-
-    public User findByName(String name) {
-        Map<String, Object> params = new HashMap<String, Object>();
-        params.put("name", name);
-        return template.queryForObject(SQL_SELECT_USER_BY_NAME, params, userRowMapper);
     }
 
     public void update(User model) {
@@ -116,17 +110,18 @@ public class UsersDaoJdbcImpl implements UsersDao {
         return template.query(SQL_SELECT_ALL, userRowMapper);
     }
 
-    /*//language=SQL
-    private final String SQL_SELECT_USERS_BY_AGE =
-            "SELECT * FROM it_park_user WHERE age = :age";
+    @Override
+    public List<User> findAllByMail(String mail) {
+        Session session = getSession();
+        session.beginTransaction();
+
+        List<User> users = session.createQuery("from User user where user.mail = :mail", User.class)
+                        .setParameter("mail", mail).list();
+        session.getTransaction().commit();
+        return users;
+    }
 
     @Override
-    public List<User1> findAllByAge(int age) {
-        Map<String, Object> params = new HashMap<>();
-        params.put("age", age);
-        return template.query(SQL_SELECT_USERS_BY_AGE, params, userRowMapper);
-    }*/
-
     public User findByIdWithAccounts(int id) {
         Session session = getSession();
         session.beginTransaction();

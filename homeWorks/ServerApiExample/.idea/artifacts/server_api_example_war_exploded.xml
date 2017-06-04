@@ -11,6 +11,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.8.RELEASE" />
@@ -18,7 +19,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.3.8.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.6" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.6" />
@@ -38,7 +39,7 @@
           <element id="library" level="project" name="Maven: org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1" />
           <element id="library" level="project" name="Maven: javax.annotation:jsr250-api:1.0" />
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
-          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.23" />
         </element>
       </element>
       <element id="directory" name="META-INF">

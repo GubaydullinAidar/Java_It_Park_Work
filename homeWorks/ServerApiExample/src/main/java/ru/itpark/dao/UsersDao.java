@@ -5,7 +5,6 @@ import ru.itpark.models.User;
 import java.util.List;
 
 public interface UsersDao extends BaseCrudDao<User> {
-    //List<User> findAllByAge(int age);
+    List<User> findAllByMail(String mail);
     User findByIdWithAccounts(int id);
-    User findByName(String name);
 }

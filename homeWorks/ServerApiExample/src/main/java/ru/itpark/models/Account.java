@@ -1,23 +1,27 @@
 package ru.itpark.models;
 
+import javax.persistence.*;
+
+@Embeddable
+@Table(name = "users_accounts")
 public class Account {
 
-    private int owner_id;
+    @Column
     private int account;
+
+    @Column
     private int balance;
 
-    public Account(int owner_id, int account, int balance) {
-        this.owner_id = owner_id;
+    @Column(name = "owner_id")
+    private int ownerId;
+
+    public Account(int account, int balance, int ownerId) {
         this.account = account;
         this.balance = balance;
+        this.ownerId = ownerId;
     }
 
-    public int getOwner_id() {
-        return owner_id;
-    }
-
-    public void setOwner_id(int owner_id) {
-        this.owner_id = owner_id;
+    public Account() {
     }
 
     public int getAccount() {
@@ -36,23 +40,11 @@ public class Account {
         this.balance = balance;
     }
 
-    @Override
-    public String toString() {
-        return "Account " +
-                "№ " + account +
-                ", balance=" + balance;
+    public int getOwnerId() {
+        return ownerId;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Account accounts = (Account) o;
-
-        if (owner_id != accounts.owner_id) return false;
-        if (account != accounts.account) return false;
-        return balance == accounts.balance;
+    public void setOwnerId(int ownerId) {
+        this.ownerId = ownerId;
     }
-
 }
