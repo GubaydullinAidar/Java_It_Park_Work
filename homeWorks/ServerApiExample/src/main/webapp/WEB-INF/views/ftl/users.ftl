@@ -13,7 +13,7 @@
     <li>${user.mail}</li>
     <ul>
         <#list user.accounts as account>
-            <li>${account.model}</li>
+            <li>${account.account}</li>
         </#list>
     </ul>
 </#list>
