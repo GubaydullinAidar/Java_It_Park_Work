@@ -29,5 +29,4 @@ public class RestUsersController {
                               @RequestBody Account account) {
         return service.addAccountToUser(userId, account);
     }
-
 }
