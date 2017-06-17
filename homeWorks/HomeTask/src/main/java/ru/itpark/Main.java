@@ -37,6 +37,6 @@ public class Main {
             }
         }
 
-        System.out.println(finalSum.getSum());
+        System.out.println("Сумма элементов массива = " + finalSum.getSum());
     }
 }
