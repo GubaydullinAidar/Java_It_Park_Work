@@ -1,6 +1,9 @@
 package ru.itpark.service;
 
 import ru.itpark.models.User;
+import ru.itpark.models.security.UserRole;
+
+import java.util.Set;
 
 public interface UserService {
 
@@ -16,7 +19,7 @@ public interface UserService {
 
     void save(User user);
 
-    User createUser(User user);
+    User createUser(User user, Set<UserRole> userRoles);
 
     User saveUser(User user);
 }

@@ -1,64 +1,67 @@
 package ru.itpark.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+import ru.itpark.dao.RoleDao;
+import ru.itpark.dto.UserDto;
 import ru.itpark.models.PrimaryAccount;
 import ru.itpark.models.SavingsAccount;
 import ru.itpark.models.User;
+import ru.itpark.models.security.UserRole;
 import ru.itpark.service.UserService;
-import java.security.Principal;
 
+import java.security.Principal;
+import java.util.HashSet;
+import java.util.Set;
+
+import static ru.itpark.converters.Converter.convert;
 
 @Controller
 public class HomeController {
 	
 	@Autowired
 	private UserService userService;
-
-	@RequestMapping(value = "/signup", method = RequestMethod.GET)
-    public String signup(Model model) {
-        User user = new User();
-
-        model.addAttribute("user", user);
-
-        return "signup";
-    }
 	
-	@RequestMapping(value = "/signup", method = RequestMethod.POST)
-    public String signupPost(@ModelAttribute("user") User user,  Model model) {
+	@Autowired
+    private RoleDao roleDao;
 
-        if(userService.checkUserExists(user.getUsername(), user.getEmail()))  {
+	@Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
-            if (userService.checkEmailExists(user.getEmail())) {
-                model.addAttribute("emailExists", true);
-            }
+    @GetMapping("/signup")
+    public String signup(User user) {
 
-            if (userService.checkUsernameExists(user.getUsername())) {
-                model.addAttribute("usernameExists", true);
-            }
-
-            return "signup";
+        if (userService.checkUserExists(user.getUsername(), user.getEmail())) {
+            return "Пользователь с таким логином и Email зарегистрирован";
+        } else if (userService.checkEmailExists(user.getEmail())) {
+            return "Пользователь с таким Email зарегистрирован";
+        } else if (userService.checkUsernameExists(user.getUsername())) {
+            return "Логин занят, выберите другой Логин";
         } else {
+            Set<UserRole> userRoles = new HashSet<>();
+            userRoles.add(new UserRole(user, roleDao.findByName("ROLE_USER")));
 
-            userService.createUser(user);
+            userService.createUser(user, userRoles);
 
-            return "redirect:/";
+            return "Регистрация прошла успешно";
         }
     }
-	
-	@RequestMapping("/userFront")
-	public String userFront(Principal principal, Model model) {
-        User user = userService.findByUsername(principal.getName());
-        PrimaryAccount primaryAccount = user.getPrimaryAccount();
-        SavingsAccount savingsAccount = user.getSavingsAccount();
 
-        model.addAttribute("primaryAccount", primaryAccount);
-        model.addAttribute("savingsAccount", savingsAccount);
+    @PostMapping("/signin")
+    public UserDto signin(@RequestHeader("login") String username,
+                          @RequestHeader("password") String password) {
+        if (userService.findByUsername(username) == null) {
+            return null;
+        } else {
+            if (passwordEncoder.matches(password, userService.findByUsername(username).getPassword())) {
+                User user = userService.findByUsername(username);
+                return convert(user);
+            }
+        }
 
-        return "userFront";
+        return null;
     }
 }
