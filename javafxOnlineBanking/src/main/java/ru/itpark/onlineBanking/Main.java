@@ -11,39 +11,25 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-    private Stage primaryStage;
     private BorderPane rootWindow;
 
     public static void main(String[] args) {
         launch(args);
     }
 
-    public Main() {
-
-    }
-
-    public Main(Stage primaryStage, BorderPane rootWindow) {
-        this.primaryStage = primaryStage;
-        this.rootWindow = rootWindow;
-    }
-
-    public Stage getPrimaryStage() {
-        return primaryStage;
-    }
-
-
-
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("OnlineBanking");
-
-        signin();
-
-       // initRootWindow(primaryStage);
-
-      //  showMainWindow();
+        FXMLLoader loader = new FXMLLoader();
+        // загружаем файл
+        loader.setLocation(getClass().getResource("/views/loginWindow.fxml"));
+        // создаем родительское окно
+        AnchorPane root = loader.load();
+        // кладем сцену с окном
+        Scene scene = new Scene(root);
+        //scene.getStylesheets().add(getClass().getResource("/css/list-ru.itpark.onlineBanking.view-style.css").toExternalForm());
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     /**
@@ -51,12 +37,8 @@ public class Main extends Application {
      */
     public void initRootWindow() {
         try {
-            // Загружаем корневой макет из fxml файла.
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("/views/rootWindow.fxml"));
-            //loader.setLocation(Main.class.getResource("windows/rootWindow.fxml"));
-            rootWindow = loader.load();
-
-            // Отображаем сцену, содержащую корневой макет.
+            rootWindow = FXMLLoader.load(Main.class.getResource("/views/rootWindow.fxml"));
+            Stage primaryStage = new Stage();
             Scene scene = new Scene(rootWindow);
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -65,49 +47,14 @@ public class Main extends Application {
         }
     }
 
-    /**
-     * Показывает в корневом макете сведения об адресатах.
-     */
     public void showMainWindow() {
         try {
-            // Загружаем сведения об адресатах.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("/views/mainWindow.fxml"));
-            AnchorPane personOverview = loader.load();
-
-            // Помещаем сведения об адресатах в центр корневого макета.
+            AnchorPane personOverview = FXMLLoader.load(Main.class.getResource("/views/mainWindow.fxml"));
             rootWindow.setCenter(personOverview);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-
-
-    public void signin() {
-        try {
-            // объявляем загружатель fxml-файлов
-            FXMLLoader loader = new FXMLLoader();
-            // загружаем файл
-            loader.setLocation(getClass().getResource("/views/loginWindow.fxml"));
-            // создаем родительское окно
-            AnchorPane root = loader.load();
-            // кладем сцену с окном
-            Scene scene = new Scene(root);
-            //scene.getStylesheets().add(getClass().getResource("/css/list-ru.itpark.onlineBanking.view-style.css").toExternalForm());
-            primaryStage.setScene(scene);
-            primaryStage.show();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /*public void signinOk() {
-        initRootWindow();
-
-        showMainWindow();
-    }*/
 
     /**
      * Открывает диалоговое окно для изменения деталей указанного адресата.
