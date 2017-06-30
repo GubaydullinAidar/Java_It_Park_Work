@@ -16,7 +16,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>8.8.3</version>
                 <configuration>
-                    <mainClass>ru.itpark.onlineBanking.app.Main</mainClass>
+                    <mainClass>ru.itpark.onlineBanking.Main</mainClass>
                 </configuration>
             </plugin>
             <plugin>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ru.itpark.onlineBanking.controllers.MainWindowController">
+    <children>
+        <SplitPane dividerPositions="0.35" layoutX="69.0" layoutY="52.0" prefHeight="300.0" prefWidth="600.0"
+                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                   AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <Label layoutX="38.0" layoutY="97.0" text="Основной счет">
+                            <font>
+                                <Font name="System Bold" size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="9.0" layoutY="226.0" text="Сберегательный счет">
+                            <font>
+                                <Font name="System Bold" size="18.0"/>
+                            </font>
+                        </Label>
+                        <Button layoutX="67.0" layoutY="124.0" mnemonicParsing="false" text="Подробнее">
+                            <font>
+                                <Font size="11.0"/>
+                            </font>
+                        </Button>
+                        <Button layoutX="67.0" layoutY="253.0" mnemonicParsing="false" text="Подробнее">
+                            <font>
+                                <Font size="11.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="298.0" prefWidth="268.0">
+                    <children>
+                        <TableView layoutY="20.0" prefHeight="286.0" prefWidth="371.0" AnchorPane.bottomAnchor="30.0"
+                                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                            <columns>
+                                <TableColumn prefWidth="121.0" text="Дата"/>
+                                <TableColumn prefWidth="119.0" text="Описание"/>
+                                <TableColumn prefWidth="121.0" text="Тип"/>
+                                <TableColumn prefWidth="121.0" text="Статус"/>
+                                <TableColumn prefWidth="121.0" text="Сумма"/>
+                                <TableColumn prefWidth="121.0" text="Остаток"/>
+                            </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                            </columnResizePolicy>
+                        </TableView>
+                        <ButtonBar prefHeight="25.0" prefWidth="206.0" AnchorPane.bottomAnchor="5.0"
+                                   AnchorPane.rightAnchor="5.0">
+                            <buttons>
+                                <Button mnemonicParsing="false" text="Пополнение"/>
+                                <Button mnemonicParsing="false" text="Снятие"/>
+                            </buttons>
+                        </ButtonBar>
+                        <Label text="Подробнее о счете" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="221.0" text="Баланс:" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="325.0" layoutY="4.0" text="баланс" AnchorPane.rightAnchor="5.0"
+                               AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
