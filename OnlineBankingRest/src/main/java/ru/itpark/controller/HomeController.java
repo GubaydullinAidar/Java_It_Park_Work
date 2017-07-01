@@ -19,7 +19,7 @@ import java.util.Set;
 
 import static ru.itpark.converters.Converter.convert;
 
-@Controller
+@RestController
 public class HomeController {
 	
 	@Autowired
@@ -58,7 +58,8 @@ public class HomeController {
         } else {
             if (passwordEncoder.matches(password, userService.findByUsername(username).getPassword())) {
                 User user = userService.findByUsername(username);
-                return convert(user);
+                UserDto convertedUser = convert(user);
+                return convertedUser;
             }
         }
 

@@ -3,14 +3,21 @@ package ru.itpark.onlineBanking.app;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 import ru.itpark.onlineBanking.models.User;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class OnlineBankingRestTemp {
 
-    private RestTemplate restTemplate = new RestTemplate();
+    private RestTemplate restTemplate;
 
-    public User login(String login, String password) {
+    public Object login(String login, String password) {
+        List<HttpMessageConverter<?>> converters = Arrays.asList(new MappingJackson2HttpMessageConverter());
+        restTemplate = new RestTemplate(converters);
 
         String url = "http://localhost:8080/signin";
         HttpHeaders headers = new HttpHeaders();

@@ -28,6 +28,7 @@ public class LoginWindowController {
         if (login.getText().length() == 0 || password.getText().length() == 0) {
             lblMessage.setText("Введите логин и пароль");
         }else if (onlineBankingRestTemp.login(login.getText(), password.getText()) != null) {
+        //}else if (true) {
             ((Node) event.getSource()).getScene().getWindow().hide();
             main.initRootWindow();
             main.showMainWindow();

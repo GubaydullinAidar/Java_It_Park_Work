@@ -10,6 +10,17 @@ public class User{
     private String login;
     private String password;
 
+    public User() {
+    }
+
+    public User(Long userId, String firstName, String lastName, String email, String phone) {
+        this.userId = userId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+    }
+
     public Long getUserId() {
         return userId;
     }
