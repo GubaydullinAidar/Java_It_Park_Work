@@ -25,7 +25,7 @@ public class LoginWindowController {
     private PasswordField password;
 
     public void signinOk(ActionEvent event) {
-        if (login.getText().equals("") || password.getText().equals("")) {
+        if (login.getText().length() == 0 || password.getText().length() == 0) {
             lblMessage.setText("Введите логин и пароль");
         }else if (onlineBankingRestTemp.login(login.getText(), password.getText()) != null) {
             ((Node) event.getSource()).getScene().getWindow().hide();
@@ -34,5 +34,9 @@ public class LoginWindowController {
         } else {
             lblMessage.setText("Неверный логин или пароль");
         }
+    }
+
+    public void signup(ActionEvent event) {
+
     }
 }
