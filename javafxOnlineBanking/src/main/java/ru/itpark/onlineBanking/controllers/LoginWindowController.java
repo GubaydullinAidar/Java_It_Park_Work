@@ -8,6 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import ru.itpark.onlineBanking.Main;
 import ru.itpark.onlineBanking.app.OnlineBankingRestTemp;
+import ru.itpark.onlineBanking.models.User;
 
 public class LoginWindowController {
 
@@ -38,6 +39,7 @@ public class LoginWindowController {
     }
 
     public void signup(ActionEvent event) {
-
+        User user = new User();
+        boolean okClicked = main.showSignupWindow(user);
     }
 }

@@ -5,12 +5,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import ru.itpark.onlineBanking.controllers.SignupWindowController;
+import ru.itpark.onlineBanking.models.User;
 
 import java.io.IOException;
 
 public class Main extends Application {
 
+    private Stage primaryStage;
     private BorderPane rootWindow;
 
     public static void main(String[] args) {
@@ -19,6 +23,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        this.primaryStage = primaryStage;
 
         FXMLLoader loader = new FXMLLoader();
         // загружаем файл
@@ -38,7 +44,6 @@ public class Main extends Application {
     public void initRootWindow() {
         try {
             rootWindow = FXMLLoader.load(Main.class.getResource("/views/rootWindow.fxml"));
-            Stage primaryStage = new Stage();
             Scene scene = new Scene(rootWindow);
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -49,10 +54,35 @@ public class Main extends Application {
 
     public void showMainWindow() {
         try {
-            AnchorPane personOverview = FXMLLoader.load(Main.class.getResource("/views/mainWindow.fxml"));
-            rootWindow.setCenter(personOverview);
+            AnchorPane mainWindow = FXMLLoader.load(Main.class.getResource("/views/mainWindow.fxml"));
+            rootWindow.setCenter(mainWindow);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public  boolean showSignupWindow(User user) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/views/signUpWindow.fxml"));
+            AnchorPane signupWindow = loader.load();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Окно регистрации");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(signupWindow);
+            dialogStage.setScene(scene);
+
+            SignupWindowController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setUser(user);
+
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
         }
     }
 

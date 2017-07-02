@@ -5,9 +5,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import ru.itpark.onlineBanking.app.OnlineBankingRestTemp;
 import ru.itpark.onlineBanking.models.User;
 
 public class SignupWindowController {
+
+    private OnlineBankingRestTemp onlineBankingRestTemp = new OnlineBankingRestTemp();
 
     @FXML
     private TextField firstNameField;
@@ -68,6 +71,8 @@ public class SignupWindowController {
             user.setLogin(loginField.getText());
             user.setPassword(passwordField.getText());
 
+            if (onlineBankingRestTemp.signup(user).equals("Регистрация прошла успешно"))
+
             okClicked = true;
             dialogStage.close();
         }
@@ -122,9 +127,9 @@ public class SignupWindowController {
                     .showError();*/
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Ошибка полей");
+            alert.setTitle("Ошибка ввода");
             alert.setHeaderText(null);
-            alert.setContentText("Пожалуйста, измените поля с ошибками");
+            alert.setContentText("Пожалуйста, заполните поля.");
             alert.showAndWait();
             return false;
         }

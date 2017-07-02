@@ -2,18 +2,13 @@ package ru.itpark.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.itpark.dao.RoleDao;
 import ru.itpark.dto.UserDto;
-import ru.itpark.models.PrimaryAccount;
-import ru.itpark.models.SavingsAccount;
 import ru.itpark.models.User;
 import ru.itpark.models.security.UserRole;
 import ru.itpark.service.UserService;
 
-import java.security.Principal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -31,7 +26,7 @@ public class HomeController {
 	@Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    @GetMapping("/signup")
+    @PostMapping("/signup")
     public String signup(User user) {
 
         if (userService.checkUserExists(user.getUsername(), user.getEmail())) {
@@ -62,7 +57,6 @@ public class HomeController {
                 return convertedUser;
             }
         }
-
         return null;
     }
 }

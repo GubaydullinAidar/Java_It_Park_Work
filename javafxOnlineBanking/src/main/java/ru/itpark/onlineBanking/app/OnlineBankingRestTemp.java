@@ -6,6 +6,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
+
 import ru.itpark.onlineBanking.models.User;
 
 import java.util.Arrays;
@@ -15,8 +16,10 @@ public class OnlineBankingRestTemp {
 
     private RestTemplate restTemplate;
 
-    public Object login(String login, String password) {
-        List<HttpMessageConverter<?>> converters = Arrays.asList(new MappingJackson2HttpMessageConverter());
+    List<HttpMessageConverter<?>> converters = Arrays.asList(new MappingJackson2HttpMessageConverter());
+
+    public User login(String login, String password) {
+
         restTemplate = new RestTemplate(converters);
 
         String url = "http://localhost:8080/signin";
@@ -26,5 +29,9 @@ public class OnlineBankingRestTemp {
         HttpEntity<String> entity = new HttpEntity<String>(headers);
         User user = restTemplate.exchange(url, HttpMethod.POST, entity, User.class).getBody();
         return user;
+    }
+
+    public String signup(User user) {
+        return null;
     }
 }

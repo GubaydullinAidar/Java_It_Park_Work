@@ -1,6 +1,5 @@
 package ru.itpark.config;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -65,13 +64,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .rememberMe();
     }
 
-
-
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 //    	 auth.inMemoryAuthentication().withUser("user").password("password").roles("USER"); //This is in-memory authentication
         auth.userDetailsService(userSecurityService).passwordEncoder(passwordEncoder());
     }
-
-
 }
