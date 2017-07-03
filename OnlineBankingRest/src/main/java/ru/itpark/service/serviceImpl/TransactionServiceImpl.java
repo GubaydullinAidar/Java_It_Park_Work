@@ -34,14 +34,14 @@ public class TransactionServiceImpl implements TransactionService {
     @Autowired
     private RecipientDao recipientDao;
 
-    public List<PrimaryTransaction> findPrimaryTransactionList(String username) {
-        User user = userService.findByUsername(username);
+    public List<PrimaryTransaction> findPrimaryTransactionList(Long userId) {
+        User user = userService.findByUserId(userId);
 
         return user.getPrimaryAccount().getPrimaryTransactionList();
     }
 
-    public List<SavingsTransaction> findSavingsTransactionList(String username) {
-        User user = userService.findByUsername(username);
+    public List<SavingsTransaction> findSavingsTransactionList(Long userId) {
+        User user = userService.findByUserId(userId);
 
         return user.getSavingsAccount().getSavingsTransactionList();
     }

@@ -7,6 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import ru.itpark.onlineBanking.controllers.MainWindowController;
 import ru.itpark.onlineBanking.controllers.SignupWindowController;
 import ru.itpark.onlineBanking.models.User;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-    private Stage primaryStage;
+    //private Stage primaryStage;
     private BorderPane rootWindow;
 
     public static void main(String[] args) {
@@ -24,7 +25,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        this.primaryStage = primaryStage;
+        //this.primaryStage = primaryStage;
 
         FXMLLoader loader = new FXMLLoader();
         // загружаем файл
@@ -45,6 +46,8 @@ public class Main extends Application {
         try {
             rootWindow = FXMLLoader.load(Main.class.getResource("/views/rootWindow.fxml"));
             Scene scene = new Scene(rootWindow);
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("Online Banking");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
@@ -52,10 +55,16 @@ public class Main extends Application {
         }
     }
 
-    public void showMainWindow() {
+    public void showMainWindow(User user) {
         try {
-            AnchorPane mainWindow = FXMLLoader.load(Main.class.getResource("/views/mainWindow.fxml"));
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/views/mainWindow.fxml"));
+            AnchorPane mainWindow = loader.load();
             rootWindow.setCenter(mainWindow);
+
+            MainWindowController controller = loader.getController();
+            controller.setUser(user);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,10 +74,11 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/views/signUpWindow.fxml"));
-            AnchorPane signupWindow = loader.load();
+            AnchorPane signupWindow = (AnchorPane) loader.load();
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Окно регистрации");
             dialogStage.initModality(Modality.WINDOW_MODAL);
+            Stage primaryStage = new Stage();
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(signupWindow);
             dialogStage.setScene(scene);

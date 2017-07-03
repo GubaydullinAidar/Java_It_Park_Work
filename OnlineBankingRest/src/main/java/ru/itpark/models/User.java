@@ -1,35 +1,27 @@
 package ru.itpark.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import ru.itpark.models.security.Authority;
-import ru.itpark.models.security.UserRole;
-
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "`user`")
-public class User implements UserDetails{
+public class User{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "userId", nullable = false, updatable = false)
     private Long userId;
     private String username;
-    private String password;
+
+    @Column(name = "password_hash")
+    private String passwordHash;
     private String firstName;
     private String lastName;
+    private String token;
 
     @Column(name = "email", nullable = false, unique = true)
     private String email;
     private String phone;
-
-    private boolean enabled=true;
 
     @OneToOne
     private PrimaryAccount primaryAccount;
@@ -39,18 +31,6 @@ public class User implements UserDetails{
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Recipient> recipientList;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonIgnore
-    private Set<UserRole> userRoles = new HashSet<>();
-
-    public Set<UserRole> getUserRoles() {
-        return userRoles;
-    }
-
-    public void setUserRoles(Set<UserRole> userRoles) {
-        this.userRoles = userRoles;
-    }
 
     public Long getUserId() {
         return userId;
@@ -108,12 +88,12 @@ public class User implements UserDetails{
         this.recipientList = recipientList;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPasswordHash() {
+        return passwordHash;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
     }
 
     public PrimaryAccount getPrimaryAccount() {
@@ -132,51 +112,28 @@ public class User implements UserDetails{
         this.savingsAccount = savingsAccount;
     }
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     @Override
     public String toString() {
-        return "UserDto{" +
+        return "User{" +
                 "userId=" + userId +
                 ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
+                ", passwordHash='" + passwordHash + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", token='" + token + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
+                ", primaryAccount=" + primaryAccount +
+                ", savingsAccount=" + savingsAccount +
                 ", recipientList=" + recipientList +
-                ", userRoles=" + userRoles +
                 '}';
     }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        Set<GrantedAuthority> authorities = new HashSet<>();
-        userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
-        return authorities;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-
 }

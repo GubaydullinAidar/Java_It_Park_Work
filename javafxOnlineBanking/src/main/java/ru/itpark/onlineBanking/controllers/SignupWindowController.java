@@ -2,7 +2,6 @@ package ru.itpark.onlineBanking.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import ru.itpark.onlineBanking.app.OnlineBankingRestTemp;
@@ -23,7 +22,7 @@ public class SignupWindowController {
     @FXML
     private TextField loginField;
     @FXML
-    private PasswordField passwordField;
+    private TextField passwordField;
 
 
     private Stage dialogStage;
@@ -45,7 +44,7 @@ public class SignupWindowController {
         lastNameField.setText(user.getLastName());
         phoneNumberField.setText(user.getPhone());
         emailField.setText(user.getEmail());
-        loginField.setText(user.getLogin());
+        loginField.setText(user.getUsername());
         passwordField.setText(user.getPassword());
     }
 
@@ -68,13 +67,20 @@ public class SignupWindowController {
             user.setLastName(lastNameField.getText());
             user.setPhone(phoneNumberField.getText());
             user.setEmail(emailField.getText());
-            user.setLogin(loginField.getText());
+            user.setUsername(loginField.getText());
             user.setPassword(passwordField.getText());
 
             if (onlineBankingRestTemp.signup(user).equals("Регистрация прошла успешно"))
 
             okClicked = true;
             dialogStage.close();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ошибка ввода");
+            alert.setHeaderText(null);
+            alert.setContentText("Oops!");
+            alert.showAndWait();
+            okClicked = false;
         }
     }
 

@@ -4,15 +4,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.itpark.dao.RoleDao;
 import ru.itpark.dao.UserDao;
 import ru.itpark.models.User;
-import ru.itpark.models.security.UserRole;
+import ru.itpark.security.utils.TokenGenerator;
 import ru.itpark.service.AccountService;
 import ru.itpark.service.UserService;
-import java.util.Set;
 
 @Service
 @Transactional
@@ -22,30 +21,43 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserDao userDao;
-	
-	@Autowired
-    private RoleDao roleDao;
 
     @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
-    
-    @Autowired
     private AccountService accountService;
-	
-	public void save(User user) {
-        userDao.save(user);
-    }
+
+    @Autowired
+    private TokenGenerator generator;
+
+    private PasswordEncoder encoder = new BCryptPasswordEncoder();
 
     public User findByUsername(String username) {
         return userDao.findByUsername(username);
     }
 
+    public User findByUserId(Long userId) {
+	    return  userDao.findByUserId(userId);
+	}
+
     public User findByEmail(String email) {
         return userDao.findByEmail(email);
     }
-    
-    
-    public User createUser(User user, Set<UserRole> userRoles) {
+
+    @Transactional
+    @Override
+    public String login(String username, String password) {
+        User registeredUser = userDao.findByUsername(username);
+
+        if (registeredUser != null) {
+            if (encoder.matches(password, registeredUser.getPasswordHash())) {
+                String token = generator.generate();
+                userDao.updateToken(registeredUser.getUserId(), token);
+                return token;
+            }
+        }
+        throw new IllegalArgumentException("Incorrect username or password");
+    }
+
+    /*public User createUser(User user) {
         User localUser = userDao.findByUsername(user.getUsername());
 
         if (localUser != null) {
@@ -54,12 +66,6 @@ public class UserServiceImpl implements UserService {
             String encryptedPassword = passwordEncoder.encode(user.getPassword());
             user.setPassword(encryptedPassword);
 
-            for (UserRole ur : userRoles) {
-                roleDao.save(ur.getRole());
-            }
-
-            user.getUserRoles().addAll(userRoles);
-
             user.setPrimaryAccount(accountService.createPrimaryAccount());
             user.setSavingsAccount(accountService.createSavingsAccount());
 
@@ -67,8 +73,8 @@ public class UserServiceImpl implements UserService {
         }
 
         return localUser;
-    }
-    
+    }*/
+
     public boolean checkUserExists(String username, String email){
         if (checkUsernameExists(username) && checkEmailExists(username)) {
             return true;

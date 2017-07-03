@@ -1,16 +1,14 @@
 package ru.itpark.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import ru.itpark.dao.RoleDao;
 import ru.itpark.dto.UserDto;
 import ru.itpark.models.User;
-import ru.itpark.models.security.UserRole;
 import ru.itpark.service.UserService;
-
-import java.util.HashSet;
-import java.util.Set;
 
 import static ru.itpark.converters.Converter.convert;
 
@@ -19,44 +17,37 @@ public class HomeController {
 	
 	@Autowired
 	private UserService userService;
-	
-	@Autowired
-    private RoleDao roleDao;
 
 	@Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
     @PostMapping("/signup")
-    public String signup(User user) {
+    public String signup(@RequestBody User user) {
+        if (user.getUsername() != null) {
+            if (userService.checkUserExists(user.getUsername(), user.getEmail())) {
+                return "Пользователь с таким логином и Email зарегистрирован";
+            } else if (userService.checkEmailExists(user.getEmail())) {
+                return "Пользователь с таким Email зарегистрирован";
+            } else if (userService.checkUsernameExists(user.getUsername())) {
+                return "Логин занят, выберите другой Логин";
+            } else {
 
-        if (userService.checkUserExists(user.getUsername(), user.getEmail())) {
-            return "Пользователь с таким логином и Email зарегистрирован";
-        } else if (userService.checkEmailExists(user.getEmail())) {
-            return "Пользователь с таким Email зарегистрирован";
-        } else if (userService.checkUsernameExists(user.getUsername())) {
-            return "Логин занят, выберите другой Логин";
+                //userService.createUser(user);
+
+                return "Регистрация прошла успешно";
+            }
         } else {
-            Set<UserRole> userRoles = new HashSet<>();
-            userRoles.add(new UserRole(user, roleDao.findByName("ROLE_USER")));
-
-            userService.createUser(user, userRoles);
-
-            return "Регистрация прошла успешно";
+            String oops = "Что-то пошло не так!";
+            return oops;
         }
     }
 
     @PostMapping("/signin")
-    public UserDto signin(@RequestHeader("login") String username,
+    public ResponseEntity<Object> signin(@RequestHeader("username") String username,
                           @RequestHeader("password") String password) {
-        if (userService.findByUsername(username) == null) {
-            return null;
-        } else {
-            if (passwordEncoder.matches(password, userService.findByUsername(username).getPassword())) {
-                User user = userService.findByUsername(username);
-                UserDto convertedUser = convert(user);
-                return convertedUser;
-            }
-        }
-        return null;
+        String token = userService.login(username, password);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Auth-Token", token);
+        return new ResponseEntity<>(null, headers, HttpStatus.ACCEPTED);
     }
 }

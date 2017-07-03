@@ -20,25 +20,28 @@ public class LoginWindowController {
     private Label lblMessage;
 
     @FXML
-    private TextField login;
+    private TextField username;
 
     @FXML
     private PasswordField password;
 
     public void signinOk(ActionEvent event) {
-        if (login.getText().length() == 0 || password.getText().length() == 0) {
+        if (username.getText().length() == 0 || password.getText().length() == 0) {
             lblMessage.setText("Введите логин и пароль");
-        }else if (onlineBankingRestTemp.login(login.getText(), password.getText()) != null) {
-        //}else if (true) {
-            ((Node) event.getSource()).getScene().getWindow().hide();
-            main.initRootWindow();
-            main.showMainWindow();
         } else {
-            lblMessage.setText("Неверный логин или пароль");
+            User user = onlineBankingRestTemp.login(username.getText(), password.getText());
+            if (user != null) {
+                //}else if (true) {
+                ((Node) event.getSource()).getScene().getWindow().hide();
+                main.initRootWindow();
+                main.showMainWindow(user);
+            } else {
+                lblMessage.setText("Неверный логин или пароль");
+            }
         }
     }
 
-    public void signup(ActionEvent event) {
+    public void signup() {
         User user = new User();
         boolean okClicked = main.showSignupWindow(user);
     }

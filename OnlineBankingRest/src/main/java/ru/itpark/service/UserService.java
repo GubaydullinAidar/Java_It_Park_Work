@@ -1,13 +1,14 @@
 package ru.itpark.service;
 
 import ru.itpark.models.User;
-import ru.itpark.models.security.UserRole;
 
 import java.util.Set;
 
 public interface UserService {
 
     User findByUsername(String username);
+
+    User findByUserId(Long userId);
 
     User findByEmail(String email);
 
@@ -17,9 +18,7 @@ public interface UserService {
 
     boolean checkEmailExists(String email);
 
-    void save(User user);
-
-    User createUser(User user, Set<UserRole> userRoles);
-
     User saveUser(User user);
+
+    String login(String login, String password);
 }
