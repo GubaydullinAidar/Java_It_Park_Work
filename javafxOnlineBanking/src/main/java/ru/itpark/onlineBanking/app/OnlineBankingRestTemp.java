@@ -24,7 +24,7 @@ public class OnlineBankingRestTemp {
         List<HttpMessageConverter<?>> converters = Arrays.asList(new MappingJackson2HttpMessageConverter());
         restTemplate = new RestTemplate(converters);
 
-        String url = "http://localhost:8080/signin";
+        String url = "http://localhost:8090/signin";
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("username", username);
@@ -42,7 +42,7 @@ public class OnlineBankingRestTemp {
     }
 
     public User getUser(String token) {
-        String url = "http://localhost:8080/user";
+        String url = "http://localhost:8090/user";
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Auth-token", token);
@@ -57,7 +57,7 @@ public class OnlineBankingRestTemp {
     public String signup(User user) {
         restTemplate = new RestTemplate();
 
-        String url = "http://localhost:8080/signup";
+        String url = "http://localhost:8090/signup";
 
         HttpEntity<User> entity = new HttpEntity<>(user);
         ResponseEntity<String> responseSignUp = restTemplate.postForEntity(url, entity, String.class);
@@ -68,7 +68,7 @@ public class OnlineBankingRestTemp {
     public List primaryTransactionList (User user) {
         restTemplate = new RestTemplate();
 
-        String url = "http://localhost:8080/user/" + user.getUserId() + "/primaryAccountTransaction";
+        String url = "http://localhost:8090/user/" + user.getUserId() + "/primaryAccountTransaction";
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Auth-token", user.getToken());
@@ -76,17 +76,20 @@ public class OnlineBankingRestTemp {
         HttpEntity<String> entity = new HttpEntity<String>(headers);
 
         ResponseEntity<List> primaryTransList = restTemplate.postForEntity(url, entity, List.class);
-        List returnIn = primaryTransList.getBody();
-        return returnIn;
+        return primaryTransList.getBody();
     }
 
-    public List savingsTransactionList (Long userId) {
-        //restTemplate = new RestTemplate(converters);
-        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/user/").queryParam("user_id", new Object[]{Long.valueOf(userId)}).queryParam("/savingsAccountTransaction");
-        String expandUrl = builder.toUriString();
-        //String url = "http://localhost:8080/user/" + userId + "/savingsAccountTransaction";
+    public List savingsTransactionList (User user) {
+        restTemplate = new RestTemplate();
 
-        List savingsTransList = restTemplate.getForObject(expandUrl, List.class, new Object[0]);
-        return savingsTransList;
+        String url = "http://localhost:8090/user/" + user.getUserId() + "/savingsAccountTransaction";
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Auth-token", user.getToken());
+
+        HttpEntity<String> entity = new HttpEntity<String>(headers);
+
+        ResponseEntity<List> savingsTransList = restTemplate.postForEntity(url, entity, List.class);
+        return savingsTransList.getBody();
     }
 }

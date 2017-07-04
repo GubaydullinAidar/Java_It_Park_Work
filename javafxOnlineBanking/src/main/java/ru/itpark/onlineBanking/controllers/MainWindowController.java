@@ -70,6 +70,6 @@ public class MainWindowController {
 
     @FXML
     public void savingsTransaction() {
-        initData(onlineBankingRestTemp.savingsTransactionList(user.getUserId()));
+        initData(onlineBankingRestTemp.savingsTransactionList(user));
     }
 }

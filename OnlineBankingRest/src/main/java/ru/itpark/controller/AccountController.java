@@ -25,13 +25,13 @@ public class AccountController {
     @Autowired
     TransactionService transactionService;
 
-    @GetMapping("/user/{user-id}/primaryAccountTransaction")
+    @PostMapping("/user/{user-id}/primaryAccountTransaction")
     public ResponseEntity<List<PrimaryTransaction>> primaryTransaction(@PathVariable("user-id") Long userId){
         List<PrimaryTransaction> primaryTransactionList = transactionService.findPrimaryTransactionList(userId);
         return new ResponseEntity<>(primaryTransactionList, HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("/user/{user-id}/savingsAccountTransaction")
+    @PostMapping("/user/{user-id}/savingsAccountTransaction")
     public ResponseEntity<List<SavingsTransaction>> savingsTransaction(@PathVariable("user-id") Long userId){
         List<SavingsTransaction> savingsTransactionList = transactionService.findSavingsTransactionList(userId);
         return new ResponseEntity<>(savingsTransactionList, HttpStatus.ACCEPTED);
