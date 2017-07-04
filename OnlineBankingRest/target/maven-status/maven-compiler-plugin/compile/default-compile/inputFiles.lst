@@ -2,6 +2,7 @@ C:\Java\Java_It_Park_Work\OnlineBankingRest\src\main\java\ru\itpark\config\Secur
 C:\Java\Java_It_Park_Work\OnlineBankingRest\src\main\java\ru\itpark\models\SavingsAccount.java
 C:\Java\Java_It_Park_Work\OnlineBankingRest\src\main\java\ru\itpark\security\provider\TokenAuthenticationProvider.java
 C:\Java\Java_It_Park_Work\OnlineBankingRest\src\main\java\ru\itpark\service\serviceImpl\UserServiceImpl.java
+C:\Java\Java_It_Park_Work\OnlineBankingRest\src\main\java\ru\itpark\dto\UserForSignUp.java
 C:\Java\Java_It_Park_Work\OnlineBankingRest\src\main\java\ru\itpark\service\TransactionService.java
 C:\Java\Java_It_Park_Work\OnlineBankingRest\src\main\java\ru\itpark\security\utils\TokenGenerator.java
 C:\Java\Java_It_Park_Work\OnlineBankingRest\src\main\java\ru\itpark\OnlineBankingApplication.java

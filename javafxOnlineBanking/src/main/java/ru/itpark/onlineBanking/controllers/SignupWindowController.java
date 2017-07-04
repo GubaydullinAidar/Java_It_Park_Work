@@ -70,17 +70,27 @@ public class SignupWindowController {
             user.setUsername(loginField.getText());
             user.setPassword(passwordField.getText());
 
-            if (onlineBankingRestTemp.signup(user).equals("Регистрация прошла успешно"))
+            String signupResponse = onlineBankingRestTemp.signup(user);
 
-            okClicked = true;
-            dialogStage.close();
-        } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Ошибка ввода");
-            alert.setHeaderText(null);
-            alert.setContentText("Oops!");
-            alert.showAndWait();
-            okClicked = false;
+            if (signupResponse.equals("Регистрация прошла успешно")) {
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle(null);
+                alert.setHeaderText(null);
+                alert.setContentText("Регистрация прошла успешно.");
+
+                alert.showAndWait();
+
+                okClicked = true;
+                dialogStage.close();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Ошибка ввода");
+                alert.setHeaderText(null);
+                alert.setContentText(signupResponse);
+                alert.showAndWait();
+                okClicked = false;
+            }
         }
     }
 

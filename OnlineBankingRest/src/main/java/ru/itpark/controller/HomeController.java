@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
+import ru.itpark.dto.UserForSignUp;
 import ru.itpark.models.User;
 import ru.itpark.service.UserService;
 
@@ -18,22 +19,21 @@ public class HomeController {
     private UserService userService;
 
     @PostMapping("/signup")
-    public ResponseEntity<User> signup (@RequestBody User user) {
-        HttpHeaders headers = new HttpHeaders();
+    public ResponseEntity<String> signup (@RequestBody UserForSignUp user) {
             if (userService.checkUserExists(user.getUsername(), user.getEmail())) {
+                String errorMessage = "";
                 if (userService.checkEmailExists(user.getEmail())) {
-                    String emailExist = "Пользователь с таким Email зарегистрирован";
-                    headers.add("Email exist", emailExist);
-                } else if (userService.checkUsernameExists(user.getUsername())) {
-                    String usernameExist = "Логин занят, выберите другой Логин";
-                    headers.add("Username exist", usernameExist);
+                    errorMessage += "Пользователь с таким Email зарегистрирован.\n";
+                }
+                if (userService.checkUsernameExists(user.getUsername())) {
+                    errorMessage += "Логин занят, выберите другой Логин";
                 }
 
-                return new ResponseEntity<>(null, headers, HttpStatus.CONFLICT);
+                return new ResponseEntity<String>(errorMessage, HttpStatus.OK);
             } else {
+                userService.createUser(user);
                 String signupOk = "Регистрация прошла успешно";
-                headers.add("signupOk", signupOk);
-                return new ResponseEntity<>(userService.createUser(user), headers, HttpStatus.OK);
+                return new ResponseEntity<>(signupOk, HttpStatus.OK);
             }
     }
 
@@ -41,9 +41,16 @@ public class HomeController {
     public ResponseEntity<User> login (@RequestHeader("username") String username,
                                         @RequestHeader("password") String password) {
         String token = userService.login(username, password);
-        User user = userService.findByToken(token);
+
         HttpHeaders headers = new HttpHeaders();
         headers.add("Auth-Token", token);
-        return new ResponseEntity<>(user, headers, HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(null, headers, HttpStatus.OK);
     }
+
+    @PostMapping("/user")
+    public ResponseEntity<User> getUser (@RequestHeader("Auth-Token") String token) {
+        return new ResponseEntity<>(userService.findByToken(token), HttpStatus.OK);
+    }
+
+
 }

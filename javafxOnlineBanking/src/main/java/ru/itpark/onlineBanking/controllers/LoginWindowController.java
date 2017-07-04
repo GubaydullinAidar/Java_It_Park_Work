@@ -29,10 +29,11 @@ public class LoginWindowController {
         if (username.getText().length() == 0 || password.getText().length() == 0) {
             lblMessage.setText("Введите логин и пароль");
         } else {
-            User user = onlineBankingRestTemp.login(username.getText(), password.getText());
-            if (user != null) {
+            String token = onlineBankingRestTemp.login(username.getText(), password.getText());
+            if (token != null) {
                 //}else if (true) {
                 ((Node) event.getSource()).getScene().getWindow().hide();
+                User user = onlineBankingRestTemp.getUser(token);
                 main.initRootWindow();
                 main.showMainWindow(user);
             } else {

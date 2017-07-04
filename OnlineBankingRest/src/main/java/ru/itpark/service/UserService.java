@@ -1,5 +1,6 @@
 package ru.itpark.service;
 
+import ru.itpark.dto.UserForSignUp;
 import ru.itpark.models.User;
 
 import java.util.Set;
@@ -20,7 +21,7 @@ public interface UserService {
 
     boolean checkEmailExists(String email);
 
-    User createUser(User user);
+    User createUser(UserForSignUp user);
 
     User saveUser(User user);
 

@@ -4,16 +4,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.itpark.dao.UserDao;
+import ru.itpark.dto.UserForSignUp;
 import ru.itpark.models.User;
 import ru.itpark.security.utils.TokenGenerator;
 import ru.itpark.service.AccountService;
 import ru.itpark.service.UserService;
-
-import java.security.SecureRandom;
 
 @Service
 @Transactional
@@ -63,19 +61,24 @@ public class UserServiceImpl implements UserService {
         throw new IllegalArgumentException("Incorrect username or password");
     }
 
-    public User createUser(User user) {
+    public User createUser(UserForSignUp user) {
         User localUser = userDao.findByUsername(user.getUsername());
 
         if (localUser != null) {
             LOG.info("UserDto with username {} already exist. Nothing will be done. ", user.getUsername());
         } else {
-            String encryptedPassword = encoder.encode(user.getPasswordHash());
-            user.setPasswordHash(encryptedPassword);
+            localUser = new User();
+            localUser.setFirstName(user.getFirstName());
+            localUser.setLastName(user.getLastName());
+            localUser.setEmail(user.getEmail());
+            localUser.setPhone(user.getPhone());
+            localUser.setPasswordHash(encoder.encode(user.getPassword()));
+            localUser.setUsername(user.getUsername());
 
-            user.setPrimaryAccount(accountService.createPrimaryAccount());
-            user.setSavingsAccount(accountService.createSavingsAccount());
+            localUser.setPrimaryAccount(accountService.createPrimaryAccount());
+            localUser.setSavingsAccount(accountService.createSavingsAccount());
 
-            localUser = userDao.save(user);
+            userDao.save(localUser);
         }
 
         return localUser;
