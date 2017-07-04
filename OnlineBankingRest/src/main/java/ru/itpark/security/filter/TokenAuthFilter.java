@@ -46,7 +46,7 @@ public class TokenAuthFilter extends GenericFilterBean {
     private boolean isNotRequiringProtection(HttpServletRequest request) {
         String requestUri = request.getRequestURI();
         String requestMethod = request.getMethod();
-        return requestUri.equals("/users") && requestMethod.equals("POST") ||
-                requestUri.equals("/login") && requestMethod.equals("POST");
+        return requestUri.equals("/signup") && requestMethod.equals("POST") ||
+                requestUri.equals("/signin") && requestMethod.equals("POST");
     }
 }

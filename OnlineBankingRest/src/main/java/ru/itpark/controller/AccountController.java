@@ -1,6 +1,8 @@
 package ru.itpark.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.itpark.models.*;
@@ -24,13 +26,15 @@ public class AccountController {
     TransactionService transactionService;
 
     @GetMapping("/user/{user-id}/primaryAccountTransaction")
-    public List primaryTransaction(@PathVariable("user-id") Long userId){
-        return transactionService.findPrimaryTransactionList(userId);
+    public ResponseEntity<List<PrimaryTransaction>> primaryTransaction(@PathVariable("user-id") Long userId){
+        List<PrimaryTransaction> primaryTransactionList = transactionService.findPrimaryTransactionList(userId);
+        return new ResponseEntity<>(primaryTransactionList, HttpStatus.ACCEPTED);
     }
 
     @GetMapping("/user/{user-id}/savingsAccountTransaction")
-    public List savingsTransaction(@PathVariable("user-id") Long userId){
-        return transactionService.findSavingsTransactionList(userId);
+    public ResponseEntity<List<SavingsTransaction>> savingsTransaction(@PathVariable("user-id") Long userId){
+        List<SavingsTransaction> savingsTransactionList = transactionService.findSavingsTransactionList(userId);
+        return new ResponseEntity<>(savingsTransactionList, HttpStatus.ACCEPTED);
     }
 
     @RequestMapping("/primaryAccount")

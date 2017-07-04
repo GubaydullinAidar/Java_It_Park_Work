@@ -74,7 +74,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/views/signUpWindow.fxml"));
-            AnchorPane signupWindow = (AnchorPane) loader.load();
+            AnchorPane signupWindow = loader.load();
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Окно регистрации");
             dialogStage.initModality(Modality.WINDOW_MODAL);

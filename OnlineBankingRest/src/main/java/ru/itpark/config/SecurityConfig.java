@@ -12,11 +12,13 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import ru.itpark.security.details.UserDetailsServiceImpl;
 import ru.itpark.security.filter.TokenAuthFilter;
 import ru.itpark.security.provider.TokenAuthenticationProvider;
 
 import javax.servlet.Filter;
+import java.security.SecureRandom;
 
 @Configuration
 @EnableWebSecurity
@@ -24,6 +26,12 @@ import javax.servlet.Filter;
 @ComponentScan("ru.itpark")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private static final String SALT = "itpark";
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(12, new SecureRandom(SALT.getBytes()));
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

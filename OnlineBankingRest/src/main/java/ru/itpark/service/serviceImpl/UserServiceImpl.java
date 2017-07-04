@@ -13,6 +13,8 @@ import ru.itpark.security.utils.TokenGenerator;
 import ru.itpark.service.AccountService;
 import ru.itpark.service.UserService;
 
+import java.security.SecureRandom;
+
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
@@ -28,7 +30,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private TokenGenerator generator;
 
-    private PasswordEncoder encoder = new BCryptPasswordEncoder();
+    @Autowired
+    private BCryptPasswordEncoder encoder;
 
     public User findByUsername(String username) {
         return userDao.findByUsername(username);
@@ -38,11 +41,14 @@ public class UserServiceImpl implements UserService {
 	    return  userDao.findByUserId(userId);
 	}
 
-    public User findByEmail(String email) {
+	public User findByEmail(String email) {
         return userDao.findByEmail(email);
     }
 
-    @Transactional
+    public User findByToken(String token) {
+        return userDao.findByToken(token);
+    }
+
     @Override
     public String login(String username, String password) {
         User registeredUser = userDao.findByUsername(username);
@@ -57,14 +63,14 @@ public class UserServiceImpl implements UserService {
         throw new IllegalArgumentException("Incorrect username or password");
     }
 
-    /*public User createUser(User user) {
+    public User createUser(User user) {
         User localUser = userDao.findByUsername(user.getUsername());
 
         if (localUser != null) {
             LOG.info("UserDto with username {} already exist. Nothing will be done. ", user.getUsername());
         } else {
-            String encryptedPassword = passwordEncoder.encode(user.getPassword());
-            user.setPassword(encryptedPassword);
+            String encryptedPassword = encoder.encode(user.getPasswordHash());
+            user.setPasswordHash(encryptedPassword);
 
             user.setPrimaryAccount(accountService.createPrimaryAccount());
             user.setSavingsAccount(accountService.createSavingsAccount());
@@ -73,10 +79,10 @@ public class UserServiceImpl implements UserService {
         }
 
         return localUser;
-    }*/
+    }
 
     public boolean checkUserExists(String username, String email){
-        if (checkUsernameExists(username) && checkEmailExists(username)) {
+        if (checkUsernameExists(username) || checkEmailExists(username)) {
             return true;
         } else {
             return false;

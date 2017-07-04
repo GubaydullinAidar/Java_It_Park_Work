@@ -6,7 +6,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import ru.itpark.dao.UsersDao;
+import ru.itpark.dao.UserDao;
 import ru.itpark.models.User;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.List;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    private UsersDao usersDao;
+    private UserDao usersDao;
 
     // загружает авторизационные данные пользователя по его username
     @Override
@@ -26,7 +26,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (usersDao.isExistToken(token)) {
             User user = usersDao.findByToken(token);
             List<GrantedAuthority> authorities = createGrantedAuthorities();
-            return new UserDetailsImpl(user.getLogin(), user.getPasswordHash(), authorities);
+            return new UserDetailsImpl(user.getUsername(), user.getPasswordHash(), authorities);
         }
         return null;
     }

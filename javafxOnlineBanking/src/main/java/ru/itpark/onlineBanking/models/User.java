@@ -9,25 +9,9 @@ public class User{
     private String phone;
     private String username;
     private String password;
+    private String token;
 
     public User() {
-    }
-
-    public User(Long userId, String firstName, String lastName, String email, String phone) {
-        this.userId = userId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phone = phone;
-    }
-
-    public User(String firstName, String lastName, String email, String phone, String login, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phone = phone;
-        this.username = login;
-        this.password = password;
     }
 
     public Long getUserId() {
@@ -86,6 +70,14 @@ public class User{
         this.password = password;
     }
 
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -94,6 +86,7 @@ public class User{
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
+                ", token='" + token + '\'' +
                 '}';
     }
 }

@@ -66,7 +66,7 @@ public class MainWindowController {
 
     @FXML
     public void primaryTransaction() {
-        initData(onlineBankingRestTemp.primaryTransactionList(user.getUserId()));
+        initData(onlineBankingRestTemp.primaryTransactionList(user));
     }
 
     @FXML
