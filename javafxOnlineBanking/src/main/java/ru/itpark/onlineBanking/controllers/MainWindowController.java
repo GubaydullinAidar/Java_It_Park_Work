@@ -1,7 +1,9 @@
 package ru.itpark.onlineBanking.controllers;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -16,13 +18,29 @@ import java.util.List;
 
 public class MainWindowController {
 
-    private Main main = new Main();
+    private Main main;
 
-    private OnlineBankingRestTemp onlineBankingRestTemp = new OnlineBankingRestTemp();
+    private OnlineBankingRestTemp onlineBankingRestTemp;
 
-    private List transactionsData;
+    private ObservableList<AccountTransaction> transactionsData;
+
+    //private List transactionsData;
 
     private User user;
+
+    public void setMain(Main main) {
+        this.main = main;
+    }
+
+    public void setOnlineBankingRestTemp(OnlineBankingRestTemp onlineBankingRestTemp) {
+        this.onlineBankingRestTemp = onlineBankingRestTemp;
+    }
+
+    @FXML
+    private Label primaryBalance;
+
+    @FXML
+    private Label savingsBalance;
 
     @FXML
     private TableView<AccountTransaction> tableTransactions;
@@ -55,11 +73,12 @@ public class MainWindowController {
         availableBalance.setCellValueFactory(new PropertyValueFactory<>("availabelBalance"));
 
         // заполняем таблицу данными
-        tableTransactions.setItems((ObservableList<AccountTransaction>) transactionsData);
+        tableTransactions.setItems(transactionsData);
     }
 
-    private void initData(List accountTransactionList) {
-        transactionsData = accountTransactionList;
+    private void initData(List<AccountTransaction> accountTransactionList) {
+        transactionsData = FXCollections.observableList(accountTransactionList);
+        initialize();
     }
 
     public void setUser(User user) {
@@ -76,7 +95,17 @@ public class MainWindowController {
         initData(onlineBankingRestTemp.savingsTransactionList(user));
     }
 
-    public void refilDebit() {
-        main.showrefilDebitWindow(user);
+    public void refillDebit() {
+        main.showRefillDebitWindow(user);
+        getPrimaryBalance();
+        getSavingsBalance();
+    }
+
+    public void getPrimaryBalance() {
+        primaryBalance.setText(onlineBankingRestTemp.getPrimaryBalance(user.getToken()));
+    }
+
+    public void getSavingsBalance() {
+        savingsBalance.setText(onlineBankingRestTemp.getSavingsBalance(user.getToken()));
     }
 }

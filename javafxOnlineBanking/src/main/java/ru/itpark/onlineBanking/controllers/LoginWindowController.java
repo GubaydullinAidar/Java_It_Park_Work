@@ -12,7 +12,7 @@ import ru.itpark.onlineBanking.models.User;
 
 public class LoginWindowController {
 
-    private Main main = new Main();
+    private Main main;
 
     private OnlineBankingRestTemp onlineBankingRestTemp = new OnlineBankingRestTemp();
 
@@ -25,6 +25,14 @@ public class LoginWindowController {
     @FXML
     private PasswordField password;
 
+    public void setMain(Main main) {
+        this.main = main;
+    }
+
+    public void setOnlineBankingRestTemp(OnlineBankingRestTemp onlineBankingRestTemp) {
+        this.onlineBankingRestTemp = onlineBankingRestTemp;
+    }
+
     @FXML
     public void signinOk(ActionEvent event) {
         if (username.getText().length() == 0 || password.getText().length() == 0) {
@@ -34,7 +42,7 @@ public class LoginWindowController {
             if (token != null) {
                 ((Node) event.getSource()).getScene().getWindow().hide();
                 User user = onlineBankingRestTemp.getUser(token);
-                main.initRootWindow();
+                main.initRootWindow(user);
                 main.showMainWindow(user);
             } else {
                 lblMessage.setText("Неверный логин или пароль");

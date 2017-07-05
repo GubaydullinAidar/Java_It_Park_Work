@@ -73,7 +73,7 @@ public class OnlineBankingRestTemp {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Auth-token", user.getToken());
 
-        HttpEntity<String> entity = new HttpEntity<String>(headers);
+        HttpEntity<String> entity = new HttpEntity<>(headers);
 
         ResponseEntity<List> primaryTransList = restTemplate.postForEntity(url, entity, List.class);
         return primaryTransList.getBody();
@@ -87,25 +87,101 @@ public class OnlineBankingRestTemp {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Auth-token", user.getToken());
 
-        HttpEntity<String> entity = new HttpEntity<String>(headers);
+        HttpEntity<String> entity = new HttpEntity<>(headers);
 
         ResponseEntity<List> savingsTransList = restTemplate.postForEntity(url, entity, List.class);
         return savingsTransList.getBody();
     }
 
-    public String refilPrimaryAccount (String token, String amount) {
+    public String refillPrimaryAccount(String token, String amount) {
         restTemplate = new RestTemplate();
 
-        String url = "http://localhost:8090/refilPrimaryAccount";
+        String url = "http://localhost:8090/refillPrimaryAccount";
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Auth-token", token);
         headers.add("amount", amount);
 
-        HttpEntity<String> entity = new HttpEntity<String>(headers);
+        HttpEntity<String> entity = new HttpEntity<>(headers);
 
-        ResponseEntity<String> responseRefilPrimaryAccount = restTemplate.postForEntity(url, entity, String.class);
-        return responseRefilPrimaryAccount.getBody();
+        ResponseEntity<String> responseRefillPrimaryAccount = restTemplate.postForEntity(url, entity, String.class);
+        return responseRefillPrimaryAccount.getBody();
 
+    }
+
+    public String refillSavingsAccount(String token, String amount) {
+        restTemplate = new RestTemplate();
+
+        String url = "http://localhost:8090/refillSavingsAccount";
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Auth-token", token);
+        headers.add("amount", amount);
+
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        ResponseEntity<String> responseRefillSavingsAccount = restTemplate.postForEntity(url, entity, String.class);
+        return responseRefillSavingsAccount.getBody();
+    }
+
+    public String debitPrimaryAccount (String token, String amount) {
+        restTemplate = new RestTemplate();
+
+        String url = "http://localhost:8090/debitPrimaryAccount";
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Auth-token", token);
+        headers.add("amount", amount);
+
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        ResponseEntity<String> responseDebitPrimaryAccount = restTemplate.postForEntity(url, entity, String.class);
+        return responseDebitPrimaryAccount.getBody();
+
+    }
+
+    public String debitSavingsAccount(String token, String amount) {
+        restTemplate = new RestTemplate();
+
+        String url = "http://localhost:8090/debitSavingsAccount";
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Auth-token", token);
+        headers.add("amount", amount);
+
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        ResponseEntity<String> responseDebitSavingsAccount = restTemplate.postForEntity(url, entity, String.class);
+        return responseDebitSavingsAccount.getBody();
+    }
+
+    public String getPrimaryBalance(String token) {
+        restTemplate = new RestTemplate();
+
+        String url = "http://localhost:8090/getBalance";
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Auth-token", token);
+        headers.add("TypeAccount", "primary");
+
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        ResponseEntity<String> responseGetPrimaryBalance = restTemplate.postForEntity(url, entity, String.class);
+        return responseGetPrimaryBalance.getBody();
+    }
+
+    public String getSavingsBalance(String token) {
+        restTemplate = new RestTemplate();
+
+        String url = "http://localhost:8090/getBalance";
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Auth-token", token);
+        headers.add("TypeAccount", "savings");
+
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        ResponseEntity<String> responseGetSavingsBalance = restTemplate.postForEntity(url, entity, String.class);
+        return responseGetSavingsBalance.getBody();
     }
 }

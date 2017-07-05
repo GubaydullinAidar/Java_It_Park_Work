@@ -79,9 +79,9 @@ public class AccountServiceImpl implements AccountService {
         }
     }
 
-    public void withdraw(String accountType, double amount, Principal principal) {
+    public void withdraw(String accountType, double amount, String token) {
 
-        User user = userService.findByUsername(principal.getName());
+        User user = userService.findByToken(token);
 
         if (accountType.equalsIgnoreCase("Основной")) {
             PrimaryAccount primaryAccount = user.getPrimaryAccount();
