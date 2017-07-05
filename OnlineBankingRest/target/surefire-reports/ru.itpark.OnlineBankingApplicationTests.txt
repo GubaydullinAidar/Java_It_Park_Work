@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ru.itpark.OnlineBankingApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.618 sec - in ru.itpark.OnlineBankingApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 41.578 sec - in ru.itpark.OnlineBankingApplicationTests
