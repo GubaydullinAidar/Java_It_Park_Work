@@ -25,13 +25,13 @@ public class LoginWindowController {
     @FXML
     private PasswordField password;
 
+    @FXML
     public void signinOk(ActionEvent event) {
         if (username.getText().length() == 0 || password.getText().length() == 0) {
             lblMessage.setText("Введите логин и пароль");
         } else {
             String token = onlineBankingRestTemp.login(username.getText(), password.getText());
             if (token != null) {
-                //}else if (true) {
                 ((Node) event.getSource()).getScene().getWindow().hide();
                 User user = onlineBankingRestTemp.getUser(token);
                 main.initRootWindow();
@@ -42,8 +42,9 @@ public class LoginWindowController {
         }
     }
 
+    @FXML
     public void signup() {
         User user = new User();
-        boolean okClicked = main.showSignupWindow(user);
+        main.showSignupWindow(user);
     }
 }

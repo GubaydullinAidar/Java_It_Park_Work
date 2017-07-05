@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import ru.itpark.onlineBanking.Main;
 import ru.itpark.onlineBanking.app.OnlineBankingRestTemp;
 import ru.itpark.onlineBanking.models.AccountTransaction;
 import ru.itpark.onlineBanking.models.User;
@@ -15,9 +16,11 @@ import java.util.List;
 
 public class MainWindowController {
 
-    private List transactionsData;
+    private Main main = new Main();
 
     private OnlineBankingRestTemp onlineBankingRestTemp = new OnlineBankingRestTemp();
+
+    private List transactionsData;
 
     private User user;
 
@@ -71,5 +74,9 @@ public class MainWindowController {
     @FXML
     public void savingsTransaction() {
         initData(onlineBankingRestTemp.savingsTransactionList(user));
+    }
+
+    public void refilDebit() {
+        main.showrefilDebitWindow(user);
     }
 }

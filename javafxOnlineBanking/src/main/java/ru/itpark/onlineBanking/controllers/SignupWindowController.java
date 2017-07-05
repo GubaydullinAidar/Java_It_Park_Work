@@ -9,7 +9,7 @@ import ru.itpark.onlineBanking.models.User;
 
 public class SignupWindowController {
 
-    private OnlineBankingRestTemp onlineBankingRestTemp = new OnlineBankingRestTemp();
+    private OnlineBankingRestTemp onlineBankingRestTemp;
 
     @FXML
     private TextField firstNameField;
@@ -29,12 +29,12 @@ public class SignupWindowController {
     private User user;
     private boolean okClicked = false;
 
-    @FXML
-    private void initialize() {
-    }
-
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
+    }
+
+    public void setOnlineBankingRestTemp(OnlineBankingRestTemp onlineBankingRestTemp) {
+        this.onlineBankingRestTemp = onlineBankingRestTemp;
     }
 
     public void setUser(User user) {

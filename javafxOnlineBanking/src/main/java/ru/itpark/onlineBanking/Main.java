@@ -7,13 +7,17 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import ru.itpark.onlineBanking.app.OnlineBankingRestTemp;
 import ru.itpark.onlineBanking.controllers.MainWindowController;
+import ru.itpark.onlineBanking.controllers.RefilDebitWindowController;
 import ru.itpark.onlineBanking.controllers.SignupWindowController;
 import ru.itpark.onlineBanking.models.User;
 
 import java.io.IOException;
 
 public class Main extends Application {
+
+    private OnlineBankingRestTemp onlineBankingRestTemp = new OnlineBankingRestTemp();
 
     //private Stage primaryStage;
     private BorderPane rootWindow;
@@ -29,7 +33,7 @@ public class Main extends Application {
 
         FXMLLoader loader = new FXMLLoader();
         // загружаем файл
-        loader.setLocation(getClass().getResource("/views/loginWindow.fxml"));
+        loader.setLocation(Main.class.getResource("/views/loginWindow.fxml"));
         // создаем родительское окно
         AnchorPane root = loader.load();
         // кладем сцену с окном
@@ -70,7 +74,7 @@ public class Main extends Application {
         }
     }
 
-    public  boolean showSignupWindow(User user) {
+    public void showSignupWindow(User user) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/views/signUpWindow.fxml"));
@@ -86,13 +90,37 @@ public class Main extends Application {
             SignupWindowController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setUser(user);
+            controller.setOnlineBankingRestTemp(onlineBankingRestTemp);
 
             dialogStage.showAndWait();
 
-            return controller.isOkClicked();
         } catch (IOException e) {
             e.printStackTrace();
-            return false;
+        }
+    }
+
+    public void showrefilDebitWindow(User user) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/views/refillDebitWindow.fxml"));
+            AnchorPane refilDebitWindow = loader.load();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Окно пополнения/списания");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            Stage primaryStage = new Stage();
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(refilDebitWindow);
+            dialogStage.setScene(scene);
+
+            RefilDebitWindowController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setUser(user);
+            controller.setOnlineBankingRestTemp(onlineBankingRestTemp);
+
+            dialogStage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

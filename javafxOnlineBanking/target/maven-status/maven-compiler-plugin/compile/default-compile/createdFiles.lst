@@ -2,6 +2,7 @@ ru\itpark\onlineBanking\controllers\LoginWindowController.class
 ru\itpark\onlineBanking\models\Account.class
 ru\itpark\onlineBanking\controllers\SignupWindowController.class
 ru\itpark\onlineBanking\app\OnlineBankingRestTemp.class
+ru\itpark\onlineBanking\controllers\RefilDebitWindowController.class
 ru\itpark\onlineBanking\controllers\MainWindowController.class
 ru\itpark\onlineBanking\Main.class
 ru\itpark\onlineBanking\models\AccountTransaction.class

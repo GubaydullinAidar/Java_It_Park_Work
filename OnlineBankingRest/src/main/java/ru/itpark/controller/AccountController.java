@@ -10,6 +10,7 @@ import ru.itpark.service.AccountService;
 import ru.itpark.service.TransactionService;
 import ru.itpark.service.UserService;
 
+import java.math.BigDecimal;
 import java.security.Principal;
 import java.util.List;
 
@@ -28,13 +29,23 @@ public class AccountController {
     @PostMapping("/user/{user-id}/primaryAccountTransaction")
     public ResponseEntity<List<PrimaryTransaction>> primaryTransaction(@PathVariable("user-id") Long userId){
         List<PrimaryTransaction> primaryTransactionList = transactionService.findPrimaryTransactionList(userId);
-        return new ResponseEntity<>(primaryTransactionList, HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(primaryTransactionList, HttpStatus.OK);
     }
 
     @PostMapping("/user/{user-id}/savingsAccountTransaction")
     public ResponseEntity<List<SavingsTransaction>> savingsTransaction(@PathVariable("user-id") Long userId){
         List<SavingsTransaction> savingsTransactionList = transactionService.findSavingsTransactionList(userId);
-        return new ResponseEntity<>(savingsTransactionList, HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(savingsTransactionList, HttpStatus.OK);
+    }
+
+    @PostMapping("/refilPrimaryAccount")
+    public ResponseEntity<String> refilPrimaryAccount (@RequestHeader("Auth-token") String token,
+                                                        @RequestHeader("amount") String amount) {
+        PrimaryAccount primaryAccount = userService.findByToken(token).getPrimaryAccount();
+
+        accountService.deposit("Основной", Double.parseDouble(amount), token);
+        String balance = String.valueOf(primaryAccount.getAccountBalance());
+        return new ResponseEntity<>(balance, HttpStatus.OK);
     }
 
     @RequestMapping("/primaryAccount")
@@ -50,6 +61,7 @@ public class AccountController {
 
         return "primaryAccount";
     }
+
 
     @RequestMapping("/savingsAccount")
     public String savingsAccount(Model model, Principal principal) {
@@ -75,7 +87,7 @@ public class AccountController {
 
     @RequestMapping(value = "/deposit", method = RequestMethod.POST)
     public String depositPost(@ModelAttribute("amount") String amount, @ModelAttribute("accountType") String accountType, Principal principal) {
-        accountService.deposit(accountType, Double.parseDouble(amount), principal);
+        //accountService.deposit(accountType, Double.parseDouble(amount), principal);
 
         return "redirect:/userFront";
     }

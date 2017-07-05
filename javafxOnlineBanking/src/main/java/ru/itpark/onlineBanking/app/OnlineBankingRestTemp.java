@@ -92,4 +92,20 @@ public class OnlineBankingRestTemp {
         ResponseEntity<List> savingsTransList = restTemplate.postForEntity(url, entity, List.class);
         return savingsTransList.getBody();
     }
+
+    public String refilPrimaryAccount (String token, String amount) {
+        restTemplate = new RestTemplate();
+
+        String url = "http://localhost:8090/refilPrimaryAccount";
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Auth-token", token);
+        headers.add("amount", amount);
+
+        HttpEntity<String> entity = new HttpEntity<String>(headers);
+
+        ResponseEntity<String> responseRefilPrimaryAccount = restTemplate.postForEntity(url, entity, String.class);
+        return responseRefilPrimaryAccount.getBody();
+
+    }
 }
