@@ -24,8 +24,6 @@ public class MainWindowController {
 
     private ObservableList<AccountTransaction> transactionsData;
 
-    //private List transactionsData;
-
     private User user;
 
     public void setMain(Main main) {

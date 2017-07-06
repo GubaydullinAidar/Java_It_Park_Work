@@ -184,4 +184,18 @@ public class OnlineBankingRestTemp {
         ResponseEntity<String> responseGetSavingsBalance = restTemplate.postForEntity(url, entity, String.class);
         return responseGetSavingsBalance.getBody();
     }
+
+    public User saveShange(User user) {
+        restTemplate = new RestTemplate();
+
+        String url = "http://localhost:8090/changeUser";
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Auth-token", user.getToken());
+
+        HttpEntity<User> entity = new HttpEntity<>(user);
+
+        ResponseEntity<User> responseGetSavingsBalance = restTemplate.postForEntity(url, entity, User.class);
+        return user;
+    }
 }

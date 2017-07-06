@@ -1,4 +1,5 @@
 ru\itpark\onlineBanking\controllers\LoginWindowController.class
+ru\itpark\onlineBanking\controllers\ProfileWindowController.class
 ru\itpark\onlineBanking\models\Account.class
 ru\itpark\onlineBanking\controllers\SignupWindowController.class
 ru\itpark\onlineBanking\controllers\RefillDebitWindowController.class

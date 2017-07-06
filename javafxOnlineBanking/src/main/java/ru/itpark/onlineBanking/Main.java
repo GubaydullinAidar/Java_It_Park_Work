@@ -59,6 +59,7 @@ public class Main extends Application {
             RootWindowController controller = loader.getController();
             controller.setMain(this);
             controller.setUser(user);
+            controller.setOnlineBankingRestTemp(onlineBankingRestTemp);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -132,42 +133,30 @@ public class Main extends Application {
         }
     }
 
-    /**
-     * Открывает диалоговое окно для изменения деталей указанного адресата.
-     * Если пользователь кликнул OK, то изменения сохраняются в предоставленном
-     * объекте адресата и возвращается значение true.
-     *
-     * @param person - объект адресата, который надо изменить
-     * @return true, если пользователь кликнул OK, в противном случае false.
-     */
-    /*public boolean showPersonEditDialog(Person person) {
+    public void showProfileWindow(User user) {
         try {
-            // Загружаем fxml-файл и создаём новую сцену
-            // для всплывающего диалогового окна.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("ru.itpark.onlineBanking.view/PersonEditDialog.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
-
-            // Создаём диалоговое окно Stage.
+            loader.setLocation(Main.class.getResource("/views/profileWindow.fxml"));
+            AnchorPane profileWindow = loader.load();
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Edit Person");
+            dialogStage.setTitle("Личный кабинет");
             dialogStage.initModality(Modality.WINDOW_MODAL);
+            Stage primaryStage = new Stage();
             dialogStage.initOwner(primaryStage);
-            Scene scene = new Scene(page);
+            Scene scene = new Scene(profileWindow);
             dialogStage.setScene(scene);
 
-            // Передаём адресата в контроллер.
-            PersonEditDialogController controller = loader.getController();
+            ProfileWindowController controller = loader.getController();
+            controller.setMain(this);
             controller.setDialogStage(dialogStage);
-            controller.setPerson(person);
+            controller.setUser(user);
+            controller.setOnlineBankingRestTemp(onlineBankingRestTemp);
+            controller.init();
 
-            // Отображаем диалоговое окно и ждём, пока пользователь его не закроет
             dialogStage.showAndWait();
 
-            return controller.isOkClicked();
         } catch (IOException e) {
             e.printStackTrace();
-            return false;
         }
-    }*/
+    }
 }
