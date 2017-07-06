@@ -16,6 +16,25 @@ public class AccountTransaction {
     public AccountTransaction() {
     }
 
+    public AccountTransaction(Long id, Date date, String description, String type, String status, double amount, BigDecimal availableBalance) {
+        this.id = id;
+        this.date = date;
+        this.description = description;
+        this.type = type;
+        this.status = status;
+        this.amount = amount;
+        this.availableBalance = availableBalance;
+    }
+
+    public AccountTransaction(Date date, String description, String type, String status, double amount, BigDecimal availableBalance) {
+        this.date = date;
+        this.description = description;
+        this.type = type;
+        this.status = status;
+        this.amount = amount;
+        this.availableBalance = availableBalance;
+    }
+
     public Long getId() {
         return id;
     }

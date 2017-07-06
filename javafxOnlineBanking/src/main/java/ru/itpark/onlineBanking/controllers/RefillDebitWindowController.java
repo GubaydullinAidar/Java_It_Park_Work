@@ -32,12 +32,7 @@ public class RefillDebitWindowController {
             String refilPrimaryAccount = onlineBankingRestTemp.refillPrimaryAccount(user.getToken(), primaryAmount.getText());
 
             if (refilPrimaryAccount != null) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle(null);
-                alert.setHeaderText(null);
-                alert.setContentText("Платеж прошел успешно. Баланс: " + refilPrimaryAccount);
-
-                alert.showAndWait();
+                okMessage(refilPrimaryAccount);
             }  else {
                 errorMessage();
             }
@@ -50,12 +45,7 @@ public class RefillDebitWindowController {
             String refilSavingsAccount = onlineBankingRestTemp.refillSavingsAccount(user.getToken(), savingsAmount.getText());
 
             if (refilSavingsAccount != null) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle(null);
-                alert.setHeaderText(null);
-                alert.setContentText("Платеж прошел успешно. Баланс: " + refilSavingsAccount);
-
-                alert.showAndWait();
+                okMessage(refilSavingsAccount);
             }  else {
                 errorMessage();
             }
@@ -68,12 +58,7 @@ public class RefillDebitWindowController {
             String debitPrimaryAccount = onlineBankingRestTemp.debitPrimaryAccount(user.getToken(), primaryAmount.getText());
 
             if (debitPrimaryAccount != null) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle(null);
-                alert.setHeaderText(null);
-                alert.setContentText("Платеж прошел успешно. Баланс: " + debitPrimaryAccount);
-
-                alert.showAndWait();
+                okMessage(debitPrimaryAccount);
             }  else {
                 errorMessage();
             }
@@ -86,12 +71,7 @@ public class RefillDebitWindowController {
             String debitSavingsAccount = onlineBankingRestTemp.debitSavingsAccount(user.getToken(), savingsAmount.getText());
 
             if (debitSavingsAccount != null) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle(null);
-                alert.setHeaderText(null);
-                alert.setContentText("Платеж прошел успешно. Баланс: " + debitSavingsAccount);
-
-                alert.showAndWait();
+               okMessage(debitSavingsAccount);
             }  else {
                 errorMessage();
             }
@@ -106,5 +86,13 @@ public class RefillDebitWindowController {
         alert.showAndWait();
     }
 
+    public void okMessage(String balance) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(null);
+        alert.setHeaderText(null);
+        alert.setContentText("Платеж прошел успешно. Баланс: " + balance);
+
+        alert.showAndWait();
+    }
 
 }

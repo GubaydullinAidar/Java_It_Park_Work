@@ -193,9 +193,9 @@ public class OnlineBankingRestTemp {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Auth-token", user.getToken());
 
-        HttpEntity<User> entity = new HttpEntity<>(user);
+        HttpEntity<User> entity = new HttpEntity<>(user, headers);
 
-        ResponseEntity<User> responseGetSavingsBalance = restTemplate.postForEntity(url, entity, User.class);
-        return user;
+        ResponseEntity<User> savedChange = restTemplate.postForEntity(url, entity, User.class);
+        return savedChange.getBody();
     }
 }

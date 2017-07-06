@@ -147,8 +147,6 @@ public class Main extends Application {
             dialogStage.setScene(scene);
 
             ProfileWindowController controller = loader.getController();
-            controller.setMain(this);
-            controller.setDialogStage(dialogStage);
             controller.setUser(user);
             controller.setOnlineBankingRestTemp(onlineBankingRestTemp);
             controller.init();

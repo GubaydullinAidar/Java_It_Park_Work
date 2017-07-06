@@ -47,6 +47,10 @@ public class UserServiceImpl implements UserService {
         return userDao.findByToken(token);
     }
 
+    public User saveUser(User user) {
+        return userDao.save(user);
+    }
+
     @Override
     public String login(String username, String password) {
         User registeredUser = userDao.findByUsername(username);
@@ -106,9 +110,5 @@ public class UserServiceImpl implements UserService {
         }
 
         return false;
-    }
-
-    public User saveUser (User user) {
-        return userDao.save(user);
     }
 }

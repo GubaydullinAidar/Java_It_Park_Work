@@ -2,37 +2,25 @@ package ru.itpark.onlineBanking.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
 import javafx.fxml.FXML;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+
 import ru.itpark.onlineBanking.Main;
 import ru.itpark.onlineBanking.app.OnlineBankingRestTemp;
 import ru.itpark.onlineBanking.models.AccountTransaction;
 import ru.itpark.onlineBanking.models.User;
 
 import java.math.BigDecimal;
+
 import java.util.Date;
 import java.util.List;
 
 public class MainWindowController {
-
-    private Main main;
-
-    private OnlineBankingRestTemp onlineBankingRestTemp;
-
-    private ObservableList<AccountTransaction> transactionsData;
-
-    private User user;
-
-    public void setMain(Main main) {
-        this.main = main;
-    }
-
-    public void setOnlineBankingRestTemp(OnlineBankingRestTemp onlineBankingRestTemp) {
-        this.onlineBankingRestTemp = onlineBankingRestTemp;
-    }
 
     @FXML
     private Label primaryBalance;
@@ -61,7 +49,23 @@ public class MainWindowController {
     @FXML
     private TableColumn<AccountTransaction, BigDecimal> availableBalance;
 
-    private void initialize() {
+    private Main main;
+
+    private OnlineBankingRestTemp onlineBankingRestTemp;
+
+    private ObservableList<AccountTransaction> transactionsData;
+
+    private User user;
+
+    public void setMain(Main main) {
+        this.main = main;
+    }
+
+    public void setOnlineBankingRestTemp(OnlineBankingRestTemp onlineBankingRestTemp) {
+        this.onlineBankingRestTemp = onlineBankingRestTemp;
+    }
+
+    private void init() {
         // устанавливаем тип и значение которое должно хранится в колонке
         date.setCellValueFactory(new PropertyValueFactory<>("date"));
         description.setCellValueFactory(new PropertyValueFactory<>("description"));
@@ -76,7 +80,7 @@ public class MainWindowController {
 
     private void initData(List<AccountTransaction> accountTransactionList) {
         transactionsData = FXCollections.observableList(accountTransactionList);
-        initialize();
+        init();
     }
 
     public void setUser(User user) {
