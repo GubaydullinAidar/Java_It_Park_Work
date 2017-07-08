@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import ru.itpark.onlineBanking.Main;
 import ru.itpark.onlineBanking.app.OnlineBankingRestTemp;
+import ru.itpark.onlineBanking.models.Account;
 import ru.itpark.onlineBanking.models.AccountTransaction;
 import ru.itpark.onlineBanking.models.User;
 
@@ -53,7 +54,7 @@ public class MainWindowController {
 
     private OnlineBankingRestTemp onlineBankingRestTemp;
 
-    private ObservableList<AccountTransaction> transactionsData;
+    private final ObservableList<AccountTransaction> transactionsData = FXCollections.observableArrayList();
 
     private User user;
 
@@ -65,36 +66,33 @@ public class MainWindowController {
         this.onlineBankingRestTemp = onlineBankingRestTemp;
     }
 
-    private void init() {
-        // устанавливаем тип и значение которое должно хранится в колонке
-        date.setCellValueFactory(new PropertyValueFactory<>("date"));
-        description.setCellValueFactory(new PropertyValueFactory<>("description"));
-        type.setCellValueFactory(new PropertyValueFactory<>("type"));
-        status.setCellValueFactory(new PropertyValueFactory<>("status"));
-        amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
-        availableBalance.setCellValueFactory(new PropertyValueFactory<>("availabelBalance"));
-
-        // заполняем таблицу данными
-        tableTransactions.setItems(transactionsData);
-    }
-
-    private void initData(List<AccountTransaction> accountTransactionList) {
-        transactionsData = FXCollections.observableList(accountTransactionList);
-        init();
-    }
 
     public void setUser(User user) {
         this.user = user;
     }
 
     @FXML
+    public void initialize() {
+        date.setCellValueFactory(new PropertyValueFactory<>("date"));
+        description.setCellValueFactory(new PropertyValueFactory<>("description"));
+        type.setCellValueFactory(new PropertyValueFactory<>("type"));
+        status.setCellValueFactory(new PropertyValueFactory<>("status"));
+        amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        availableBalance.setCellValueFactory(new PropertyValueFactory<>("availabelBalance"));
+        tableTransactions.setItems(transactionsData);
+
+    }
+
+    @FXML
     public void primaryTransaction() {
-        initData(onlineBankingRestTemp.primaryTransactionList(user));
+        List<AccountTransaction> data  =  onlineBankingRestTemp.primaryTransactionList(user);
+        transactionsData.addAll(data);
     }
 
     @FXML
     public void savingsTransaction() {
-        initData(onlineBankingRestTemp.savingsTransactionList(user));
+        List<AccountTransaction> data  =  onlineBankingRestTemp.savingsTransactionList(user);
+        transactionsData.addAll(data);
     }
 
     public void refillDebit() {

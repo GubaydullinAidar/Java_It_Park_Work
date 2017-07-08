@@ -8,9 +8,11 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import ru.itpark.onlineBanking.models.Account;
 import ru.itpark.onlineBanking.models.AccountTransaction;
 import ru.itpark.onlineBanking.models.User;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -65,7 +67,7 @@ public class OnlineBankingRestTemp {
         return responseSignUp.getBody();
     }
 
-    public List primaryTransactionList (User user) {
+    public List<AccountTransaction> primaryTransactionList (User user) {
         restTemplate = new RestTemplate();
 
         String url = "http://localhost:8090/user/" + user.getUserId() + "/primaryAccountTransaction";
@@ -75,11 +77,13 @@ public class OnlineBankingRestTemp {
 
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
-        ResponseEntity<List> primaryTransList = restTemplate.postForEntity(url, entity, List.class);
-        return primaryTransList.getBody();
+        //ResponseEntity<List> primaryTransList = restTemplate.postForEntity(url, entity, List.class);
+        ResponseEntity<AccountTransaction[]> responseEntity = restTemplate.postForEntity(url, entity, AccountTransaction[].class);
+        AccountTransaction[] objects = responseEntity.getBody();
+        return new ArrayList<>(Arrays.asList(objects));
     }
 
-    public List savingsTransactionList (User user) {
+    public List<AccountTransaction> savingsTransactionList (User user) {
         restTemplate = new RestTemplate();
 
         String url = "http://localhost:8090/user/" + user.getUserId() + "/savingsAccountTransaction";
@@ -89,8 +93,10 @@ public class OnlineBankingRestTemp {
 
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
-        ResponseEntity<List> savingsTransList = restTemplate.postForEntity(url, entity, List.class);
-        return savingsTransList.getBody();
+        //ResponseEntity<List> savingsTransList = restTemplate.postForEntity(url, entity, List.class);
+        ResponseEntity<AccountTransaction[]> responseEntity = restTemplate.postForEntity(url, entity, AccountTransaction[].class);
+        AccountTransaction[] object = responseEntity.getBody();
+        return new ArrayList<>(Arrays.asList(object));
     }
 
     public String refillPrimaryAccount(String token, String amount) {
