@@ -1,47 +1,21 @@
 package ru.itpark.onlineBanking.models;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AccountTransaction {
 
-    private Long id;
     private Date date;
     private String description;
-    private String type;
     private String status;
     private double amount;
     private BigDecimal availableBalance;
+    private String dateStr;
 
     public AccountTransaction() {
     }
-
-    public AccountTransaction(Long id, Date date, String description, String type, String status, double amount, BigDecimal availableBalance) {
-        this.id = id;
-        this.date = date;
-        this.description = description;
-        this.type = type;
-        this.status = status;
-        this.amount = amount;
-        this.availableBalance = availableBalance;
-    }
-
-    public AccountTransaction(Date date, String description, String type, String status, double amount, BigDecimal availableBalance) {
-        this.date = date;
-        this.description = description;
-        this.type = type;
-        this.status = status;
-        this.amount = amount;
-        this.availableBalance = availableBalance;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private SimpleDateFormat formatForDateStr = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
     public Date getDate() {
         return date;
@@ -57,14 +31,6 @@ public class AccountTransaction {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getStatus() {
@@ -83,21 +49,27 @@ public class AccountTransaction {
         this.amount = amount;
     }
 
-    public BigDecimal getAvailableBalance() {
-        return availableBalance;
+    public Double getAvailableBalance() {
+        return availableBalance.doubleValue();
     }
 
     public void setAvailableBalance(BigDecimal availableBalance) {
         this.availableBalance = availableBalance;
     }
 
+    public String getDateStr() {
+        return formatForDateStr.format(date);
+    }
+
+    public void setDateStr(String dateStr) {
+        this.dateStr = dateStr;
+    }
+
     @Override
     public String toString() {
         return "AccountTransaction{" +
-                "id=" + id +
                 ", date=" + date +
                 ", description='" + description + '\'' +
-                ", type='" + type + '\'' +
                 ", status='" + status + '\'' +
                 ", amount=" + amount +
                 ", availableBalance=" + availableBalance +

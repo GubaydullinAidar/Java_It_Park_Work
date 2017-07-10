@@ -47,6 +47,7 @@ public class TokenAuthFilter extends GenericFilterBean {
         String requestUri = request.getRequestURI();
         String requestMethod = request.getMethod();
         return requestUri.equals("/signup") && requestMethod.equals("POST") ||
-                requestUri.equals("/signin") && requestMethod.equals("POST");
+                requestUri.equals("/signin") && requestMethod.equals("POST")||
+                requestUri.equals("/tokenValid") && requestMethod.equals("POST");
     }
 }

@@ -3,14 +3,19 @@ package ru.itpark.onlineBanking;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
 import ru.itpark.onlineBanking.app.OnlineBankingRestTemp;
 import ru.itpark.onlineBanking.controllers.*;
 import ru.itpark.onlineBanking.models.User;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Main extends Application {
@@ -25,26 +30,41 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        String token = tokenValid();
+        if (token != null) {
+            User user = onlineBankingRestTemp.getUser(token);
+            initRootWindow(user);
+            showMainWindow(user);
+        } else {
 
-        FXMLLoader loader = new FXMLLoader();
-        // загружаем файл
-        loader.setLocation(Main.class.getResource("/views/loginWindow.fxml"));
-        // создаем родительское окно
-        AnchorPane root = loader.load();
-        // кладем сцену с окном
-        Scene scene = new Scene(root);
-        //scene.getStylesheets().add(getClass().getResource("/css/list-ru.itpark.onlineBanking.view-style.css").toExternalForm());
-        primaryStage.setScene(scene);
-        primaryStage.show();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/views/loginWindow.fxml"));
+            AnchorPane root = loader.load();
+            Scene scene = new Scene(root);
+            primaryStage.getIcons().add(new Image("/images/login.png"));
+            primaryStage.setScene(scene);
+            primaryStage.show();
 
-        LoginWindowController controller = loader.getController();
-        controller.setMain(this);
-        controller.setOnlineBankingRestTemp(onlineBankingRestTemp);
+            LoginWindowController controller = loader.getController();
+            controller.setMain(this);
+            controller.setOnlineBankingRestTemp(onlineBankingRestTemp);
+        }
     }
 
-    /**
-     * Инициализирует корневой макет.
-     */
+    public String tokenValid() {
+        try {
+            BufferedReader in = new BufferedReader(new FileReader("C:/token.txt"));
+            String token = in.readLine();
+            in.close();
+            if (onlineBankingRestTemp.tokenValid(token)) {
+                return token;
+            }
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return null;
+    }
+
     public void initRootWindow(User user) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -53,13 +73,13 @@ public class Main extends Application {
             Scene scene = new Scene(rootWindow);
             Stage primaryStage = new Stage();
             primaryStage.setTitle("Online Banking");
+            primaryStage.getIcons().add(new Image("/images/banking.png"));
             primaryStage.setScene(scene);
             primaryStage.show();
 
             RootWindowController controller = loader.getController();
             controller.setMain(this);
             controller.setUser(user);
-            controller.setOnlineBankingRestTemp(onlineBankingRestTemp);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -94,6 +114,7 @@ public class Main extends Application {
             dialogStage.initModality(Modality.WINDOW_MODAL);
             Stage primaryStage = new Stage();
             dialogStage.initOwner(primaryStage);
+            dialogStage.getIcons().add(new Image("/images/registration.png"));
             Scene scene = new Scene(signupWindow);
             dialogStage.setScene(scene);
 
@@ -119,6 +140,7 @@ public class Main extends Application {
             dialogStage.initModality(Modality.WINDOW_MODAL);
             Stage primaryStage = new Stage();
             dialogStage.initOwner(primaryStage);
+            dialogStage.getIcons().add(new Image("/images/banking.png"));
             Scene scene = new Scene(refillDebitWindow);
             dialogStage.setScene(scene);
 
@@ -143,6 +165,7 @@ public class Main extends Application {
             dialogStage.initModality(Modality.WINDOW_MODAL);
             Stage primaryStage = new Stage();
             dialogStage.initOwner(primaryStage);
+            dialogStage.getIcons().add(new Image("/images/profile.png"));
             Scene scene = new Scene(profileWindow);
             dialogStage.setScene(scene);
 
@@ -153,6 +176,16 @@ public class Main extends Application {
 
             dialogStage.showAndWait();
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveToken (String token) {
+        try {
+            FileWriter writer = new FileWriter("C:\\token.txt", false);
+            writer.write(token);
+            writer.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }

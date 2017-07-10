@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
+
 import ru.itpark.dto.UserForSignUp;
 import ru.itpark.models.User;
 import ru.itpark.service.UserService;
@@ -17,6 +18,11 @@ public class HomeController {
 
     @Autowired
     private UserService userService;
+
+    @PostMapping("/tokenValid")
+    public ResponseEntity<Boolean> tokenValid(@RequestHeader("token") String token) {
+        return new ResponseEntity<>(userService.findByToken(token) != null, HttpStatus.OK);
+    }
 
     @PostMapping("/signup")
     public ResponseEntity<String> signup (@RequestBody UserForSignUp user) {
@@ -29,7 +35,7 @@ public class HomeController {
                     errorMessage += "Логин занят, выберите другой Логин";
                 }
 
-                return new ResponseEntity<String>(errorMessage, HttpStatus.OK);
+                return new ResponseEntity<>(errorMessage, HttpStatus.OK);
             } else {
                 userService.createUser(user);
                 String signupOk = "Регистрация прошла успешно";

@@ -6,9 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
-import ru.itpark.onlineBanking.models.Account;
 import ru.itpark.onlineBanking.models.AccountTransaction;
 import ru.itpark.onlineBanking.models.User;
 
@@ -20,7 +18,19 @@ public class OnlineBankingRestTemp {
 
     private RestTemplate restTemplate;
 
+    public boolean tokenValid(String token) {
+        restTemplate = new RestTemplate();
+        String url = "http://localhost:8090/tokenValid";
 
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("token", token);
+
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        ResponseEntity<Boolean> tokenValid = restTemplate.postForEntity(url, entity, Boolean.class);
+
+        return tokenValid.getBody();
+    }
 
     public String login(String username, String password) {
         List<HttpMessageConverter<?>> converters = Arrays.asList(new MappingJackson2HttpMessageConverter());
@@ -33,14 +43,14 @@ public class OnlineBankingRestTemp {
         headers.add("password", password);
 
         HttpEntity<String> entity = new HttpEntity<String>(headers);
-
-        ResponseEntity<User> user = restTemplate.postForEntity(url, entity, User.class);
-
-        headers = user.getHeaders();
-
-        String token = headers.getFirst("Auth-token");
-
-        return token;
+        try {
+            ResponseEntity<User> user = restTemplate.postForEntity(url, entity, User.class);
+            headers = user.getHeaders();
+            return headers.getFirst("Auth-token");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public User getUser(String token) {
@@ -77,7 +87,6 @@ public class OnlineBankingRestTemp {
 
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
-        //ResponseEntity<List> primaryTransList = restTemplate.postForEntity(url, entity, List.class);
         ResponseEntity<AccountTransaction[]> responseEntity = restTemplate.postForEntity(url, entity, AccountTransaction[].class);
         AccountTransaction[] objects = responseEntity.getBody();
         return new ArrayList<>(Arrays.asList(objects));
@@ -93,7 +102,6 @@ public class OnlineBankingRestTemp {
 
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
-        //ResponseEntity<List> savingsTransList = restTemplate.postForEntity(url, entity, List.class);
         ResponseEntity<AccountTransaction[]> responseEntity = restTemplate.postForEntity(url, entity, AccountTransaction[].class);
         AccountTransaction[] object = responseEntity.getBody();
         return new ArrayList<>(Arrays.asList(object));

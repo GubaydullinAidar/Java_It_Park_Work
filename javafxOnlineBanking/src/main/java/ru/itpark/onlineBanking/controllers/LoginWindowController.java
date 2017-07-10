@@ -10,6 +10,10 @@ import ru.itpark.onlineBanking.Main;
 import ru.itpark.onlineBanking.app.OnlineBankingRestTemp;
 import ru.itpark.onlineBanking.models.User;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class LoginWindowController {
 
     private Main main;
@@ -39,7 +43,9 @@ public class LoginWindowController {
             lblMessage.setText("Введите логин и пароль");
         } else {
             String token = onlineBankingRestTemp.login(username.getText(), password.getText());
+
             if (token != null) {
+                main.saveToken(token);
                 ((Node) event.getSource()).getScene().getWindow().hide();
                 User user = onlineBankingRestTemp.getUser(token);
                 main.initRootWindow(user);
