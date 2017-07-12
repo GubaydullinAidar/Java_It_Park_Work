@@ -3,8 +3,6 @@ package ru.itpark.service;
 import ru.itpark.dto.UserForSignUp;
 import ru.itpark.models.User;
 
-import java.util.Set;
-
 public interface UserService {
 
     User findByUsername(String username);
